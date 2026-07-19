@@ -8,7 +8,7 @@ abstract class AppTheme {
 
   static final ThemeData lightTheme = ThemeData(
     scaffoldBackgroundColor: LightAppColors.background,
-    textTheme: GoogleFonts.tajawalTextTheme(),
+    textTheme: GoogleFonts.cairoTextTheme(),
     textSelectionTheme: const TextSelectionThemeData(
       selectionColor: LightAppColors.primary,
       selectionHandleColor: LightAppColors.primary,
@@ -33,7 +33,7 @@ abstract class AppTheme {
 
   static final ThemeData darkTheme = ThemeData(
     scaffoldBackgroundColor: DarkAppColors.background,
-    textTheme: GoogleFonts.tajawalTextTheme(),
+    textTheme: GoogleFonts.cairoTextTheme(),
     textSelectionTheme: const TextSelectionThemeData(
       selectionColor: DarkAppColors.primary,
       selectionHandleColor: DarkAppColors.primary,
