@@ -1,6 +1,7 @@
 import 'package:easy_localization/easy_localization.dart' as ez;
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:iconsax_flutter/iconsax_flutter.dart';
 import 'package:zet/core/helpers/locale_keys.dart';
 import 'package:zet/core/resources/colors.dart';
 import 'package:zet/core/resources/styles.dart';
@@ -12,13 +13,13 @@ class SignInPhoneField extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Column(
-      crossAxisAlignment: CrossAxisAlignment.center,
+      crossAxisAlignment: CrossAxisAlignment.start,
       spacing: 8.h,
       children: [
         AppTextField(
           title: context.tr(LocaleKeys.phoneNumber),
-          titleIcon: Icons.phone_outlined,
-          hint: '5********',
+          titleIcon: Iconsax.call_copy,
+          hint: '********5',
           textDirection: TextDirection.ltr,
           keyboardType: TextInputType.number,
           textAlign: TextAlign.left,
@@ -41,9 +42,8 @@ class SignInPhoneField extends StatelessWidget {
           context.tr(LocaleKeys.phoneNumberUsage),
           style: AppTextStyles.style12Regular(
             context,
-            color: DynamicColors.textColor(context).withValues(alpha: 0.5),
+            color: DynamicColors.offText(context),
           ),
-          textAlign: TextAlign.center,
         ),
       ],
     );

@@ -22,9 +22,8 @@ class SignInPasswordField extends StatelessWidget {
           context.tr(LocaleKeys.passwordRequirements),
           style: AppTextStyles.style12Regular(
             context,
-            color: DynamicColors.textColor(context).withValues(alpha: 0.5),
+            color: DynamicColors.offText(context),
           ),
-          textAlign: TextAlign.center,
         ),
       ],
     );

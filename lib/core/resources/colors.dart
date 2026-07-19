@@ -6,6 +6,7 @@ abstract class AppColors {
   static const Color pink = Color(0xffE10872);
   static const Color primary = Color(0xff2B2B2B);
   static const Color cyan = Color(0xff2BE3FF);
+  static const Color offWhite = Color(0xffEDEDED);
 }
 
 abstract class LightAppColors {
@@ -85,6 +86,14 @@ abstract class DynamicColors {
       context,
       light: LightAppColors.sweetGrey,
       dark: DarkAppColors.background,
+    );
+  }
+
+  static Color offText(BuildContext context) {
+    return getColor(
+      context,
+      light: AppColors.primary,
+      dark: AppColors.offWhite,
     );
   }
 }

@@ -40,12 +40,13 @@ class AppTextField extends StatelessWidget {
       spacing: 16.h,
       children: [
         Row(
+          spacing: 12.w,
           children: [
             Text(
               title,
               style: AppTextStyles.style16Bold(context),
             ),
-            if (titleIcon != null) Icon(titleIcon),
+            if (titleIcon != null) Icon(titleIcon, size: 18.w),
           ],
         ),
         TextField(
@@ -114,14 +115,14 @@ class _AppPasswordFieldState extends State<AppPasswordField> {
   Widget build(BuildContext context) {
     return AppTextField(
       title: widget.title,
+      titleIcon: Icons.lock_open,
       hint: widget.hint,
-      prefixIcon: Icons.lock_outline_rounded,
       obscureText: _obscure,
       controller: widget.controller,
       suffixIcon: IconButton(
         onPressed: () => setState(() => _obscure = !_obscure),
         icon: Icon(
-          _obscure ? Iconsax.eye : Iconsax.eye_slash,
+          _obscure ? Iconsax.eye_copy : Iconsax.eye_slash_copy,
           size: 20.sp,
           color: DynamicColors.secondaryTextColor(context),
         ),

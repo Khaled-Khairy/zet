@@ -2,9 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:zet/core/resources/colors.dart';
 
-/// A self-contained checkbox row. Owns its own [bool] state so that
-/// the parent can remain a [StatelessWidget].
-class SignInCheckboxRow extends StatefulWidget {
+class SignInCheckboxRow extends StatelessWidget {
   final Widget label;
   final ValueChanged<bool>? onChanged;
 
@@ -15,38 +13,28 @@ class SignInCheckboxRow extends StatefulWidget {
   });
 
   @override
-  State<SignInCheckboxRow> createState() => _SignInCheckboxRowState();
-}
-
-class _SignInCheckboxRowState extends State<SignInCheckboxRow> {
-  bool _checked = false;
-
-  @override
   Widget build(BuildContext context) {
     return Row(
+      spacing: 8.w,
       crossAxisAlignment: CrossAxisAlignment.center,
       children: [
-        Expanded(child: widget.label),
-        8.horizontalSpace,
         SizedBox(
           width: 24.w,
           height: 24.h,
           child: Checkbox(
-            value: _checked,
-            onChanged: (v) {
-              setState(() => _checked = v ?? false);
-              widget.onChanged?.call(v ?? false);
-            },
+            value: false,
+            onChanged: (v) {},
             activeColor: DynamicColors.primary(context),
             shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(6.r),
             ),
             side: BorderSide(
-              color: DynamicColors.textColor(context).withValues(alpha: 0.3),
-              width: 1.5,
+              color: DynamicColors.getColor(context, light: AppColors.primary, dark: AppColors.offWhite),
+              width: 1.3,
             ),
           ),
         ),
+        Expanded(child: label),
       ],
     );
   }

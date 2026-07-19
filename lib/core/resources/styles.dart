@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:zet/core/helpers/font_weight_helper.dart';
 import 'package:zet/core/resources/colors.dart';
 
@@ -12,7 +13,7 @@ abstract class AppTextStyles {
     required FontWeight fontWeight,
     Color? color,
   }) {
-    return TextStyle(
+    return GoogleFonts.cairo(
       fontSize: fontSize,
       fontWeight: fontWeight,
       color: color ?? DynamicColors.textColor(context),

@@ -13,7 +13,7 @@ class SignInView extends StatelessWidget {
     return Scaffold(
       appBar: CustomAppBar(title: context.tr(LocaleKeys.createNewAccount)),
       body: Padding(
-        padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 32.h),
+        padding: EdgeInsets.symmetric(horizontal: 20.w),
         child: const SignInBody(),
       ),
     );
