@@ -7,12 +7,12 @@ import 'package:zet/core/resources/styles.dart';
 
 class AppButton extends StatelessWidget {
   final bool enabled;
-  final VoidCallback? onPressed;
+  final VoidCallback onPressed;
 
   const AppButton({
     super.key,
-    required this.enabled,
-    this.onPressed,
+    this.enabled = true,
+    required this.onPressed,
   });
 
   @override

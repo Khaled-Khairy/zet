@@ -28,7 +28,6 @@ class SignInFooter extends StatelessWidget {
         ),
         40.verticalSpace,
         AppButton(
-          enabled: true,
           onPressed: () {},
         ),
       ],

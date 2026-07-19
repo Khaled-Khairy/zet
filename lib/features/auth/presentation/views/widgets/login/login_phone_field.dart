@@ -1,13 +1,12 @@
 import 'package:easy_localization/easy_localization.dart' as ez;
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:iconsax_flutter/iconsax_flutter.dart';
 import 'package:zet/core/helpers/locale_keys.dart';
 import 'package:zet/core/resources/colors.dart';
 import 'package:zet/core/resources/styles.dart';
 import 'package:zet/core/widgets/app_text_field.dart';
 
-/// Phone number input for the Login screen.
-/// Same layout as [SignInPhoneField] but without the usage hint below.
 class LoginPhoneField extends StatelessWidget {
   const LoginPhoneField({super.key});
 
@@ -15,8 +14,8 @@ class LoginPhoneField extends StatelessWidget {
   Widget build(BuildContext context) {
     return AppTextField(
       title: context.tr(LocaleKeys.phoneNumber),
-      titleIcon: Icons.phone_outlined,
-      hint: '5********',
+      titleIcon: Iconsax.call_copy,
+      hint: '********5',
       textDirection: TextDirection.ltr,
       keyboardType: TextInputType.number,
       textAlign: TextAlign.left,
