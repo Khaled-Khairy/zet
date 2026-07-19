@@ -15,7 +15,7 @@ class AppRouter {
   AppRouter._();
 
   static final GoRouter router = GoRouter(
-    initialLocation: AppRoutes.splash,
+    initialLocation: AppRoutes.home,
 
     // ---------------------------------------------------------------
     // ERROR PAGE (invalid/unknown route)
@@ -94,7 +94,7 @@ class AppRouter {
           context: context,
           state: state,
           child: const HomeView(),
-          transitionType: TransitionType.slideFromRight,
+          transitionType: TransitionType.fade,
         ),
       ),
       GoRoute(
@@ -103,7 +103,7 @@ class AppRouter {
           context: context,
           state: state,
           child: const ChallengesView(),
-          transitionType: TransitionType.slideFromRight,
+          transitionType: TransitionType.fade,
         ),
       ),
       GoRoute(
@@ -112,7 +112,7 @@ class AppRouter {
           context: context,
           state: state,
           child: const MoreView(),
-          transitionType: TransitionType.slideFromRight,
+          transitionType: TransitionType.fade,
         ),
       ),
     ],

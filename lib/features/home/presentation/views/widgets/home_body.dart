@@ -9,20 +9,25 @@ class HomeBody extends StatelessWidget {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Stack(
+        fit: StackFit.expand,
         children: [
           SingleChildScrollView(
             physics: const BouncingScrollPhysics(),
             padding: EdgeInsets.symmetric(horizontal: 16.w).copyWith(bottom: 100.h),
-            child: Column(
+            child: const Column(
               crossAxisAlignment: CrossAxisAlignment.start,
-              children: [],
+              children: [
+                // TODO: Add HomeHeader widget
+                // TODO: Add HomeQuickActions widget
+                // TODO: Add HomeActivityList widget
+              ],
             ),
           ),
-          const Positioned(
-            bottom: 0,
-            left: 0,
-            right: 0,
-            child: AppBottomNavBar(currentIndex: 1),
+          Positioned(
+            bottom: 25.h,
+            left: 60.w,
+            right: 60.w,
+            child: const AppBottomNavBar(currentIndex: 1),
           ),
         ],
       ),

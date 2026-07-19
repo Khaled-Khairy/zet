@@ -9,13 +9,13 @@ class ChallengesBody extends StatelessWidget {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Stack(
+        fit: StackFit.expand,
         children: [
           // ── Scrollable content ───────────────────────────────────
           SingleChildScrollView(
             physics: const BouncingScrollPhysics(),
-            padding: EdgeInsets.symmetric(horizontal: 16.w)
-                .copyWith(bottom: 100.h),
-            child: Column(
+            padding: EdgeInsets.symmetric(horizontal: 16.w).copyWith(bottom: 100.h),
+            child: const Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 // TODO: Add ChallengesHeader widget
@@ -24,11 +24,11 @@ class ChallengesBody extends StatelessWidget {
             ),
           ),
           // ── Bottom navigation ────────────────────────────────────
-          const Positioned(
-            bottom: 0,
-            left: 0,
-            right: 0,
-            child: AppBottomNavBar(currentIndex: 0),
+          Positioned(
+            bottom: 25.h,
+            left: 60.w,
+            right: 60.w,
+            child: const AppBottomNavBar(currentIndex: 0),
           ),
         ],
       ),

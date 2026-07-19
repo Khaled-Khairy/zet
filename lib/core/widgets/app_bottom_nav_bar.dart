@@ -1,3 +1,5 @@
+import 'dart:ui';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
@@ -17,35 +19,33 @@ class AppBottomNavBar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 80.h,
+      height: 77.h,
       decoration: BoxDecoration(
-        color: DynamicColors.background(context),
-        boxShadow: [
-          BoxShadow(
-            color: Colors.black.withValues(alpha: 0.3),
-            blurRadius: 20,
-          ),
-        ],
+        color: DynamicColors.secondaryBackground(context),
+        borderRadius: BorderRadius.circular(82.r),
       ),
       child: Row(
         children: [
           _NavItem(
             icon: AppSvgs.challengesTab,
-            activeIcon: AppSvgs.challengesTabActive,
             isActive: currentIndex == 0,
+            activeColor: AppColors.cyan,
             onTap: () => context.go(AppRoutes.challenges),
+            size: 32,
           ),
           _NavItem(
             icon: AppSvgs.homeTab,
-            activeIcon: AppSvgs.homeTabActive,
             isActive: currentIndex == 1,
+            activeColor: AppColors.pink,
             onTap: () => context.go(AppRoutes.home),
+            size: 35,
           ),
           _NavItem(
             icon: AppSvgs.moreTab,
-            activeIcon: AppSvgs.moreTabActive,
             isActive: currentIndex == 2,
+            activeColor: AppColors.pink,
             onTap: () => context.go(AppRoutes.more),
+            size: 28,
           ),
         ],
       ),
@@ -55,25 +55,73 @@ class AppBottomNavBar extends StatelessWidget {
 
 class _NavItem extends StatelessWidget {
   final String icon;
-  final String activeIcon;
   final bool isActive;
+  final Color activeColor;
   final VoidCallback? onTap;
+  final double size;
+
+  static const Color _inactiveColor = Color(0xFF606060);
+  static const Color _shadowColor = Color(0x40000000);
+  static const double _shadowBlurSigma = 2;
+  static const double _shadowOffsetY = 4;
 
   const _NavItem({
     required this.icon,
-    required this.activeIcon,
     required this.isActive,
+    required this.activeColor,
+    required this.size,
     this.onTap,
   });
 
   @override
   Widget build(BuildContext context) {
+    final Color color = isActive ? activeColor : _inactiveColor;
+
     return Expanded(
       child: GestureDetector(
         onTap: onTap,
         behavior: HitTestBehavior.opaque,
-        child: SvgPicture.asset(
-          isActive ? activeIcon : icon,
+        child: Center(
+          child: isActive
+              ? Stack(
+                  alignment: Alignment.center,
+                  clipBehavior: Clip.none,
+                  children: [
+                    Transform.translate(
+                      offset: const Offset(0, _shadowOffsetY),
+                      child: ImageFiltered(
+                        imageFilter: ImageFilter.blur(
+                          sigmaX: _shadowBlurSigma,
+                          sigmaY: _shadowBlurSigma,
+                        ),
+                        child: SvgPicture.asset(
+                          icon,
+                          width: size.w,
+                          height: size.h,
+                          fit: BoxFit.contain,
+                          colorFilter: const ColorFilter.mode(
+                            _shadowColor,
+                            BlendMode.srcIn,
+                          ),
+                        ),
+                      ),
+                    ),
+                    SvgPicture.asset(
+                      icon,
+                      width: size.w,
+                      height: size.h,
+                      fit: BoxFit.contain,
+                      colorFilter: ColorFilter.mode(color, BlendMode.srcIn),
+                    ),
+                  ],
+                )
+              : SvgPicture.asset(
+                  icon,
+                  width: size.w,
+                  height: size.h,
+                  fit: BoxFit.contain,
+                  colorFilter: ColorFilter.mode(color, BlendMode.srcIn),
+                ),
         ),
       ),
     );
