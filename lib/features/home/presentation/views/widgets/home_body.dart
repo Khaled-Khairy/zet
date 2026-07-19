@@ -1,6 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:zet/core/widgets/app_bottom_nav_bar.dart';
+import 'package:zet/features/home/presentation/views/widgets/brand_challenges_list_view.dart';
+import 'package:zet/features/home/presentation/views/widgets/easy_challenge_list_view.dart';
+import 'package:zet/features/home/presentation/views/widgets/home_challenges_categories_list_view.dart';
+import 'package:zet/features/home/presentation/views/widgets/home_header.dart';
+import 'package:zet/features/home/presentation/views/widgets/home_strong_challenges_list_view.dart';
+import 'package:zet/features/home/presentation/views/widgets/random_challenges.dart';
 
 class HomeBody extends StatelessWidget {
   const HomeBody({super.key});
@@ -12,14 +18,20 @@ class HomeBody extends StatelessWidget {
         fit: StackFit.expand,
         children: [
           SingleChildScrollView(
-            physics: const BouncingScrollPhysics(),
-            padding: EdgeInsets.symmetric(horizontal: 16.w).copyWith(bottom: 100.h),
-            child: const Column(
+            child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                // TODO: Add HomeHeader widget
-                // TODO: Add HomeQuickActions widget
-                // TODO: Add HomeActivityList widget
+                const HomeHeader(),
+                16.verticalSpace,
+                const HomeChallengesCategoriesListView(),
+                24.verticalSpace,
+                const HomeStrongChallengesListView(),
+                24.verticalSpace,
+                const EasyChallengeListView(),
+                24.verticalSpace,
+                const BrandChallengesListView(),
+                24.verticalSpace,
+                const RandomChallenges(),
               ],
             ),
           ),

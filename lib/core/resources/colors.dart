@@ -18,6 +18,9 @@ abstract class LightAppColors {
   static const Color textColor = Color(0xff000000);
   static const Color secondaryTextColor = Color(0xff000000);
   static const Color sweetGrey = Color(0xffD9D9D9);
+  static const Color primaryPlaceHolder = Color(0xffD9D9D9);
+  static const Color placeHolder = Color(0xffE4E4E4);
+  static const Color card = Color(0xffFFFFFF);
 }
 
 abstract class DarkAppColors {
@@ -28,6 +31,9 @@ abstract class DarkAppColors {
   static const Color secondaryBackground = Color(0xff161616);
   static const Color textColor = Color(0xffFFFFFF);
   static const Color secondaryTextColor = Color(0xffEDEDED);
+  static const Color primaryPlaceHolder = Color(0xff161616);
+  static const Color placeHolder = Color(0xff2B2B2B);
+  static const Color card = Color(0xff000000);
 }
 
 abstract class DynamicColors {
@@ -94,6 +100,30 @@ abstract class DynamicColors {
       context,
       light: AppColors.primary,
       dark: AppColors.offWhite,
+    );
+  }
+
+  static Color primaryPlaceHolder(BuildContext context) {
+    return getColor(
+      context,
+      light: LightAppColors.primaryPlaceHolder,
+      dark: DarkAppColors.primaryPlaceHolder,
+    );
+  }
+
+  static Color placeHolder(BuildContext context) {
+    return getColor(
+      context,
+      light: LightAppColors.placeHolder,
+      dark: DarkAppColors.placeHolder,
+    );
+  }
+
+  static Color card(BuildContext context) {
+    return getColor(
+      context,
+      light: LightAppColors.card,
+      dark: DarkAppColors.card,
     );
   }
 }

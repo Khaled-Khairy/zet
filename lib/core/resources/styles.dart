@@ -35,6 +35,15 @@ abstract class AppTextStyles {
   }
 
   // 12
+  static TextStyle style10Regular(BuildContext context, {Color? color}) => _style(context, 10, FontWeightHelper.regular, color: color);
+
+  static TextStyle style10Medium(BuildContext context, {Color? color}) => _style(context, 10, FontWeightHelper.medium, color: color);
+
+  static TextStyle style10SemiBold(BuildContext context, {Color? color}) => _style(context, 10, FontWeightHelper.semiBold, color: color);
+
+  static TextStyle style10Bold(BuildContext context, {Color? color}) => _style(context, 10, FontWeightHelper.bold, color: color);
+
+  // 12
   static TextStyle style12Regular(BuildContext context, {Color? color}) => _style(context, 12, FontWeightHelper.regular, color: color);
 
   static TextStyle style12Medium(BuildContext context, {Color? color}) => _style(context, 12, FontWeightHelper.medium, color: color);

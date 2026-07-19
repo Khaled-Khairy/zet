@@ -3,6 +3,11 @@ abstract class AppImages {
 
   static const String splashWave = 'assets/images/splash_waves.png';
   static const String welcomeWaves = 'assets/images/welcome_waves.png';
+  static const String zetLogoDark = 'assets/images/zetLogoDark.png';
+  static const String zetLogoLight = 'assets/images/zetLogoLight.png';
+
+  // Temp
+  static const String tempLogo = 'assets/images/tempLogo.jpg';
 }
 
 abstract class AppSvgs {
@@ -15,4 +20,9 @@ abstract class AppSvgs {
   static const String challengesTab = 'assets/svgs/Challenges Tab Icon.svg';
   static const String homeTab = 'assets/svgs/Home Tab Icon.svg';
   static const String moreTab = 'assets/svgs/More Tab Icon.svg';
+  static const String currency = 'assets/svgs/Currency Icon.svg';
+  static const String reward = 'assets/svgs/Reward Icon.svg';
+
+  // Temp
+  static const String gift = 'assets/svgs/gift.svg';
 }
