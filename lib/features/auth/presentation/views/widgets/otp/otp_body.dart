@@ -1,8 +1,10 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:go_router/go_router.dart';
 import 'package:zet/core/helpers/locale_keys.dart';
 import 'package:zet/core/resources/styles.dart';
+import 'package:zet/core/routing/app_routes.dart';
 import 'package:zet/core/widgets/app_button.dart';
 import 'package:zet/features/auth/presentation/views/widgets/otp/otp_pin_input.dart';
 import 'package:zet/features/auth/presentation/views/widgets/otp/otp_resend_text.dart';
@@ -30,7 +32,9 @@ class OtpBody extends StatelessWidget {
         ),
         const Spacer(),
         AppButton(
-          onPressed: () {},
+          onPressed: () {
+            context.go(AppRoutes.home);
+          },
         ),
         24.verticalSpace,
       ],

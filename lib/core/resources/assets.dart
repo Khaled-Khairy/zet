@@ -12,4 +12,10 @@ abstract class AppSvgs {
   static const String splashText = 'assets/svgs/splash_text.svg';
   static const String inLove = 'assets/svgs/in-love.svg';
   static const String fire03 = 'assets/svgs/fire-03.svg';
+  static const String challengesTab = 'assets/svgs/Challenges Tab Icon.svg';
+  static const String challengesTabActive = 'assets/svgs/Challenges Tab Icon Active.svg';
+  static const String homeTab = 'assets/svgs/Home Tab Icon.svg';
+  static const String homeTabActive = 'assets/svgs/Home Tab Icon Active.svg';
+  static const String moreTab = 'assets/svgs/More Tab Icon.svg';
+  static const String moreTabActive = 'assets/svgs/More Tab Icon Active.svg';
 }

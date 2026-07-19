@@ -7,4 +7,6 @@ abstract class AppRoutes {
   static const signIn = '/signIn';
   static const otp = '/otp';
   static const home = '/home';
+  static const challenges = '/challenges';
+  static const more = '/more';
 }
