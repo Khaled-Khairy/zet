@@ -13,36 +13,34 @@ class HomeBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SafeArea(
-      child: Stack(
-        fit: StackFit.expand,
-        children: [
-          SingleChildScrollView(
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                const HomeHeader(),
-                16.verticalSpace,
-                const HomeChallengesCategoriesListView(),
-                24.verticalSpace,
-                const HomeStrongChallengesListView(),
-                24.verticalSpace,
-                const EasyChallengeListView(),
-                24.verticalSpace,
-                const BrandChallengesListView(),
-                24.verticalSpace,
-                const RandomChallenges(),
-              ],
-            ),
+    return Stack(
+      fit: StackFit.expand,
+      children: [
+        SingleChildScrollView(
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              const HomeHeader(),
+              16.verticalSpace,
+              const HomeChallengesCategoriesListView(),
+              24.verticalSpace,
+              const HomeStrongChallengesListView(),
+              24.verticalSpace,
+              const EasyChallengeListView(),
+              24.verticalSpace,
+              const BrandChallengesListView(),
+              24.verticalSpace,
+              const RandomChallenges(),
+            ],
           ),
-          Positioned(
-            bottom: 25.h,
-            left: 60.w,
-            right: 60.w,
-            child: const AppBottomNavBar(currentIndex: 1),
-          ),
-        ],
-      ),
+        ),
+        Positioned(
+          bottom: 25.h,
+          left: 60.w,
+          right: 60.w,
+          child: const AppBottomNavBar(currentIndex: 1),
+        ),
+      ],
     );
   }
 }

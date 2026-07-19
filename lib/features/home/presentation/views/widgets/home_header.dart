@@ -30,7 +30,8 @@ class HomeHeader extends StatelessWidget {
                         style: AppTextStyles.style12Regular(context),
                       ),
                       Container(
-                        padding: EdgeInsets.symmetric(horizontal: 10.w, vertical: 6.h),
+                        padding: EdgeInsets.symmetric(
+                            horizontal: 10.w, vertical: 6.h),
                         decoration: BoxDecoration(
                           color: AppColors.cyan,
                           borderRadius: BorderRadius.circular(9.r),
