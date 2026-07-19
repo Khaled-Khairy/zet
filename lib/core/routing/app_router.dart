@@ -3,6 +3,8 @@ import 'package:go_router/go_router.dart';
 import 'package:zet/core/routing/app_routes.dart';
 import 'package:zet/core/routing/page_transition.dart';
 import 'package:zet/features/auth/presentation/views/login_view.dart';
+import 'package:zet/features/auth/presentation/views/otp_view.dart';
+import 'package:zet/features/auth/presentation/views/sign_in_view.dart';
 import 'package:zet/features/auth/presentation/views/welcome_page_view.dart';
 import 'package:zet/features/splash/view/splash_view.dart';
 
@@ -40,7 +42,6 @@ class AppRouter {
     routes: [
       GoRoute(
         path: AppRoutes.splash,
-        name: 'splash',
         pageBuilder: (context, state) => RouteAnimations.buildPage(
           context: context,
           state: state,
@@ -50,22 +51,38 @@ class AppRouter {
       ),
       GoRoute(
         path: AppRoutes.welcomePage,
-        name: 'welcome page',
         pageBuilder: (context, state) => RouteAnimations.buildPage(
           context: context,
           state: state,
           child: const WelcomePageView(),
-          transitionType: TransitionType.slideFromRight,
+          transitionType: TransitionType.slideFromBottom,
         ),
       ),
       GoRoute(
         path: AppRoutes.login,
-        name: 'login',
         pageBuilder: (context, state) => RouteAnimations.buildPage(
           context: context,
           state: state,
           child: const LoginView(),
-          transitionType: TransitionType.slideFromRight,
+          transitionType: TransitionType.slideFromBottom,
+        ),
+      ),
+      GoRoute(
+        path: AppRoutes.signIn,
+        pageBuilder: (context, state) => RouteAnimations.buildPage(
+          context: context,
+          state: state,
+          child: const SignInView(),
+          transitionType: TransitionType.slideFromBottom,
+        ),
+      ),
+      GoRoute(
+        path: AppRoutes.otp,
+        pageBuilder: (context, state) => RouteAnimations.buildPage(
+          context: context,
+          state: state,
+          child: const OtpView(),
+          transitionType: TransitionType.slideFromBottom,
         ),
       ),
     ],

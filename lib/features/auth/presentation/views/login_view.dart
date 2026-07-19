@@ -1,4 +1,7 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
+import 'package:zet/core/helpers/locale_keys.dart';
+import 'package:zet/core/widgets/custom_app_bar.dart';
 import 'package:zet/features/auth/presentation/views/widgets/login/login_body.dart';
 
 class LoginView extends StatelessWidget {
@@ -6,8 +9,9 @@ class LoginView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
-      body: LoginBody(),
+    return Scaffold(
+      appBar: CustomAppBar(title: context.tr(LocaleKeys.login)),
+      body: const LoginBody(),
     );
   }
 }

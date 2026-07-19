@@ -25,9 +25,17 @@ abstract class AppTheme {
       elevation: 0,
       systemOverlayStyle: SystemUiOverlayStyle(
         statusBarColor: Colors.transparent,
-        statusBarIconBrightness: Brightness.dark, // Android
-        statusBarBrightness: Brightness.light, // iOS
+        statusBarIconBrightness: Brightness.dark,
+        statusBarBrightness: Brightness.light,
       ),
+    ),
+    iconTheme: const IconThemeData(
+      color: LightAppColors.textColor,
+      size: 24,
+    ),
+    primaryIconTheme: const IconThemeData(
+      color: LightAppColors.textColor,
+      size: 24,
     ),
   );
 
@@ -50,9 +58,17 @@ abstract class AppTheme {
       elevation: 0,
       systemOverlayStyle: SystemUiOverlayStyle(
         statusBarColor: Colors.transparent,
-        statusBarIconBrightness: Brightness.light, // Android
-        statusBarBrightness: Brightness.dark, // iOS
+        statusBarIconBrightness: Brightness.light,
+        statusBarBrightness: Brightness.dark,
       ),
+    ),
+    iconTheme: const IconThemeData(
+      color: DarkAppColors.textColor,
+      size: 24,
+    ),
+    primaryIconTheme: const IconThemeData(
+      color: DarkAppColors.textColor,
+      size: 24,
     ),
   );
 }

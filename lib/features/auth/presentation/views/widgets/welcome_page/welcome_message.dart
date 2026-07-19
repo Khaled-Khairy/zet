@@ -22,7 +22,7 @@ class WelcomeMessage extends StatelessWidget {
           spacing: 32.w,
           children: [
             Text(
-              context.tr(LocalKeys.welcomeToApp),
+              context.tr(LocaleKeys.welcomeToApp),
               style: AppTextStyles.style24Bold(context),
             ),
             SvgPicture.asset(
@@ -33,14 +33,14 @@ class WelcomeMessage extends StatelessWidget {
         ),
         15.verticalSpace,
         Text(
-          context.tr(LocalKeys.loginNow),
+          context.tr(LocaleKeys.loginNow),
           style: AppTextStyles.style20Regular(context),
         ),
         Row(
           spacing: 4.w,
           children: [
             Text(
-              context.tr(LocalKeys.startEarningMoney),
+              context.tr(LocaleKeys.startEarningMoney),
               style: AppTextStyles.style20Regular(context),
             ),
             SvgPicture.asset(

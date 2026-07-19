@@ -1,5 +1,5 @@
-abstract class LocalKeys {
-  LocalKeys._();
+abstract class LocaleKeys {
+  LocaleKeys._();
 
   static const String welcomeToApp = 'welcomeToApp';
   static const String loginNow = 'loginNow';

@@ -16,6 +16,7 @@ abstract class LightAppColors {
   static const Color secondaryBackground = Color(0xffFFFFFF);
   static const Color textColor = Color(0xff000000);
   static const Color secondaryTextColor = Color(0xff000000);
+  static const Color sweetGrey = Color(0xffD9D9D9);
 }
 
 abstract class DarkAppColors {
@@ -76,6 +77,14 @@ abstract class DynamicColors {
       context,
       light: LightAppColors.secondaryTextColor,
       dark: DarkAppColors.secondaryTextColor,
+    );
+  }
+
+  static Color sweetGrey(BuildContext context) {
+    return getColor(
+      context,
+      light: LightAppColors.sweetGrey,
+      dark: DarkAppColors.background,
     );
   }
 }
