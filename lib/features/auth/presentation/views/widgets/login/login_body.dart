@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:go_router/go_router.dart';
+import 'package:zet/core/routing/app_routes.dart';
 import 'package:zet/core/widgets/app_button.dart';
 import 'package:zet/features/auth/presentation/views/widgets/login/login_password_field.dart';
 import 'package:zet/features/auth/presentation/views/widgets/login/login_phone_field.dart';
@@ -18,7 +20,9 @@ class LoginBody extends StatelessWidget {
           const LoginPasswordField(),
           const Spacer(),
           AppButton(
-            onPressed: () {},
+            onPressed: () {
+              context.push(AppRoutes.otp);
+            },
           ),
           24.verticalSpace,
         ],
