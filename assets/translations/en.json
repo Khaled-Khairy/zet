@@ -82,5 +82,8 @@
   "challengeStatus": "Challenge Status:",
   "challengeExpired": "The time expired before completing the challenge",
   "today": "Today",
-  "yesterday": "Yesterday"
+  "yesterday": "Yesterday",
+  "instagram": "Instagram",
+  "tiktok": "TikTok",
+  "xSocial": "X"
 }

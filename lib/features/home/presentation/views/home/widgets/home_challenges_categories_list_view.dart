@@ -2,8 +2,8 @@ import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:zet/core/helpers/locale_keys.dart';
-import 'package:zet/features/home/presentation/views/widgets/challenge_category_card.dart';
-import 'package:zet/features/home/presentation/views/widgets/home_horizontal_section.dart';
+import 'package:zet/features/home/presentation/views/home/widgets/challenge_category_card.dart';
+import 'package:zet/features/home/presentation/views/home/widgets/home_horizontal_section.dart';
 
 class HomeChallengesCategoriesListView extends StatelessWidget {
   const HomeChallengesCategoriesListView({super.key});

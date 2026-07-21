@@ -85,4 +85,7 @@ abstract class LocaleKeys {
   static const String challengeExpired = 'challengeExpired';
   static const String today = 'today';
   static const String yesterday = 'yesterday';
+  static const String instagram = 'instagram';
+  static const String tiktok = 'tiktok';
+  static const String xSocial = 'xSocial';
 }

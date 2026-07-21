@@ -11,4 +11,6 @@ abstract class AppRoutes {
   static const more = '/more';
   static const settings = '/settings';
   static const notifications = '/notifications';
+  static const categoryChallenges = '/categoryChallenges';
+  static const contactUs = '/contactUs';
 }

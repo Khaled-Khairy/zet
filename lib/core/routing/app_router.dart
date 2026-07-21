@@ -7,7 +7,9 @@ import 'package:zet/features/auth/presentation/views/otp_view.dart';
 import 'package:zet/features/auth/presentation/views/sign_in_view.dart';
 import 'package:zet/features/auth/presentation/views/welcome_page_view.dart';
 import 'package:zet/features/challenges/presentation/views/challenges_view.dart';
-import 'package:zet/features/home/presentation/views/home_view.dart';
+import 'package:zet/features/home/presentation/views/category_challenges/category_challenges_view.dart';
+import 'package:zet/features/home/presentation/views/home/home_view.dart';
+import 'package:zet/features/more/presentation/views/contact_us/contact_us_view.dart';
 import 'package:zet/features/more/presentation/views/more/more_view.dart';
 import 'package:zet/features/more/presentation/views/notifications/notifications_view.dart';
 import 'package:zet/features/more/presentation/views/settings/settings_view.dart';
@@ -132,6 +134,27 @@ class AppRouter {
           context: context,
           state: state,
           child: const NotificationsView(),
+          transitionType: TransitionType.slideFromRight,
+        ),
+      ),
+      GoRoute(
+        path: AppRoutes.categoryChallenges,
+        pageBuilder: (context, state) {
+          final String title = state.extra as String? ?? '';
+          return RouteAnimations.buildPage(
+            context: context,
+            state: state,
+            child: CategoryChallengesView(title: title),
+            transitionType: TransitionType.slideFromRight,
+          );
+        },
+      ),
+      GoRoute(
+        path: AppRoutes.contactUs,
+        pageBuilder: (context, state) => RouteAnimations.buildPage(
+          context: context,
+          state: state,
+          child: const ContactUsView(),
           transitionType: TransitionType.slideFromRight,
         ),
       ),

@@ -1,26 +1,32 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:go_router/go_router.dart';
 import 'package:zet/core/helpers/locale_keys.dart';
 import 'package:zet/core/resources/colors.dart';
-import 'package:zet/features/home/presentation/views/widgets/home_horizontal_section.dart';
+import 'package:zet/core/routing/app_routes.dart';
+import 'package:zet/features/home/presentation/views/home/widgets/home_horizontal_section.dart';
 
 class HomeStrongChallengesListView extends StatelessWidget {
   const HomeStrongChallengesListView({super.key});
 
   @override
   Widget build(BuildContext context) {
+    final title = context.tr(LocaleKeys.strongChallenges);
     return HomeHorizontalSection(
-      title: context.tr(LocaleKeys.strongChallenges),
+      title: title,
       subTitle: context.tr(LocaleKeys.strongChallengeDescription),
       height: 127.h,
       itemCount: 5,
       itemBuilder: (context, index) {
-        return Container(
-          width: 210.w,
-          decoration: BoxDecoration(
-            color: DynamicColors.secondaryBackground(context),
-            borderRadius: BorderRadius.circular(12.r),
+        return GestureDetector(
+          onTap: () => context.push(AppRoutes.categoryChallenges, extra: title),
+          child: Container(
+            width: 210.w,
+            decoration: BoxDecoration(
+              color: DynamicColors.secondaryBackground(context),
+              borderRadius: BorderRadius.circular(12.r),
+            ),
           ),
         );
       },

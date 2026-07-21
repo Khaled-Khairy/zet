@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:zet/features/home/presentation/views/widgets/home_challenges_title.dart';
+import 'package:zet/features/home/presentation/views/home/widgets/home_challenges_title.dart';
 
 class HomeHorizontalSection extends StatelessWidget {
   final String title;

@@ -6,7 +6,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:zet/core/helpers/locale_keys.dart';
 import 'package:zet/core/resources/colors.dart';
 import 'package:zet/core/resources/styles.dart';
-import 'package:zet/features/home/presentation/views/widgets/home_horizontal_section.dart';
+import 'package:zet/features/home/presentation/views/home/widgets/home_horizontal_section.dart';
 
 class BrandChallengesListView extends StatelessWidget {
   const BrandChallengesListView({super.key});

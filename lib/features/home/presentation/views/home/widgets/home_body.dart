@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:zet/core/widgets/app_bottom_nav_bar.dart';
-import 'package:zet/features/home/presentation/views/widgets/brand_challenges_list_view.dart';
-import 'package:zet/features/home/presentation/views/widgets/easy_challenge_list_view.dart';
-import 'package:zet/features/home/presentation/views/widgets/home_challenges_categories_list_view.dart';
-import 'package:zet/features/home/presentation/views/widgets/home_page_view.dart';
-import 'package:zet/features/home/presentation/views/widgets/home_strong_challenges_list_view.dart';
-import 'package:zet/features/home/presentation/views/widgets/random_challenges.dart';
+import 'package:zet/features/home/presentation/views/home/widgets/brand_challenges_list_view.dart';
+import 'package:zet/features/home/presentation/views/home/widgets/easy_challenge_list_view.dart';
+import 'package:zet/features/home/presentation/views/home/widgets/home_challenges_categories_list_view.dart';
+import 'package:zet/features/home/presentation/views/home/widgets/home_page_view.dart';
+import 'package:zet/features/home/presentation/views/home/widgets/home_strong_challenges_list_view.dart';
+import 'package:zet/features/home/presentation/views/home/widgets/random_challenges.dart';
 
 class HomeBody extends StatelessWidget {
   const HomeBody({super.key});

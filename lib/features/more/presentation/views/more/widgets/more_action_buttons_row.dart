@@ -2,10 +2,12 @@ import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:go_router/go_router.dart';
 import 'package:zet/core/helpers/locale_keys.dart';
 import 'package:zet/core/resources/assets.dart';
 import 'package:zet/core/resources/colors.dart';
 import 'package:zet/core/resources/styles.dart';
+import 'package:zet/core/routing/app_routes.dart';
 
 class MoreActionButtonsRow extends StatelessWidget {
   const MoreActionButtonsRow({super.key});
@@ -32,6 +34,7 @@ class MoreActionButtonsRow extends StatelessWidget {
           _HeaderActionButton(
             title: context.tr(LocaleKeys.contactUs),
             iconPath: AppSvgs.call,
+            onTap: () => context.push(AppRoutes.contactUs),
           ),
         ],
       ),
@@ -43,15 +46,18 @@ class _HeaderActionButton extends StatelessWidget {
   const _HeaderActionButton({
     required this.title,
     required this.iconPath,
+    this.onTap,
   });
 
   final String title;
   final String iconPath;
+  final VoidCallback? onTap;
 
   @override
   Widget build(BuildContext context) {
     return Expanded(
       child: GestureDetector(
+        onTap: onTap,
         child: Container(
           padding: EdgeInsets.symmetric(vertical: 12.h, horizontal: 4.w),
           decoration: BoxDecoration(

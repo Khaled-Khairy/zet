@@ -43,6 +43,11 @@ abstract class AppSvgs {
   static const String agreement01 = 'assets/svgs/agreement-01.svg';
   static const String security = 'assets/svgs/security.svg';
   static const String logoutSquare01 = 'assets/svgs/logout-square-01.svg';
+  static const String whatsapp = 'assets/svgs/whatsapp.svg';
+  static const String storeAdd = 'assets/svgs/store-add-02.svg';
+  static const String instagram = 'assets/svgs/instagram.svg';
+  static const String tiktok = 'assets/svgs/tiktok.svg';
+  static const String x = 'assets/svgs/x.svg';
 
   // Temp
   static const String gift = 'assets/svgs/gift.svg';

@@ -5,7 +5,7 @@ import 'package:zet/core/helpers/locale_keys.dart';
 import 'package:zet/core/resources/assets.dart';
 import 'package:zet/core/resources/colors.dart';
 import 'package:zet/core/widgets/challenge_list_card.dart';
-import 'package:zet/features/home/presentation/views/widgets/home_challenges_title.dart';
+import 'package:zet/features/home/presentation/views/home/widgets/home_challenges_title.dart';
 
 class RandomChallenges extends StatelessWidget {
   const RandomChallenges({super.key});
