@@ -22,14 +22,17 @@ class MoreActionButtonsRow extends StatelessWidget {
           _HeaderActionButton(
             title: context.tr(LocaleKeys.requestTransfer),
             iconPath: AppSvgs.transferRequest,
+            onTap: () => context.push(AppRoutes.requestTransfer),
           ),
           _HeaderActionButton(
             title: context.tr(LocaleKeys.challengeHistory),
             iconPath: AppSvgs.charts,
+            onTap: () => context.push(AppRoutes.challengeHistory),
           ),
           _HeaderActionButton(
             title: context.tr(LocaleKeys.favoriteStores),
             iconPath: AppSvgs.market,
+            onTap: () => context.push(AppRoutes.favoriteStores),
           ),
           _HeaderActionButton(
             title: context.tr(LocaleKeys.contactUs),

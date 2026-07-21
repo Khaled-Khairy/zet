@@ -26,7 +26,7 @@ class MoreOptionsSection extends StatelessWidget {
             width: 16.w,
             height: 19.h,
             showArrow: true,
-            onTap: () {},
+            onTap: () => context.push(AppRoutes.managePersonalAccount),
           ),
           _MoreOptionItem(
             title: context.tr(LocaleKeys.premiumPackage),
@@ -34,7 +34,7 @@ class MoreOptionsSection extends StatelessWidget {
             width: 21.w,
             height: 21.h,
             showArrow: true,
-            onTap: () {},
+            onTap: () => context.push(AppRoutes.premiumPackage),
           ),
           _MoreOptionItem(
             title: context.tr(LocaleKeys.bankAccount),
@@ -42,7 +42,7 @@ class MoreOptionsSection extends StatelessWidget {
             width: 22.w,
             height: 18.h,
             showArrow: true,
-            onTap: () {},
+            onTap: () => context.push(AppRoutes.bankAccount),
           ),
           _MoreOptionItem(
             title: context.tr(LocaleKeys.settings),

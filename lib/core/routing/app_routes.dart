@@ -13,4 +13,10 @@ abstract class AppRoutes {
   static const notifications = '/notifications';
   static const categoryChallenges = '/categoryChallenges';
   static const contactUs = '/contactUs';
+  static const challengeHistory = '/challengeHistory';
+  static const requestTransfer = '/requestTransfer';
+  static const favoriteStores = '/favoriteStores';
+  static const managePersonalAccount = '/managePersonalAccount';
+  static const bankAccount = '/bankAccount';
+  static const premiumPackage = '/premiumPackage';
 }

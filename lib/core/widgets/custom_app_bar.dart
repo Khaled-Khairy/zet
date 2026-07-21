@@ -20,7 +20,7 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
       titleSpacing: 0,
       title: Text(
         title,
-        style: AppTextStyles.style16Bold(context),
+        style: AppTextStyles.style14Bold(context),
       ),
       leading: GestureDetector(
         onTap: () => context.pop(),

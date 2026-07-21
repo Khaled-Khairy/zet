@@ -6,6 +6,7 @@ import 'package:zet/core/resources/styles.dart';
 
 class AppTextField extends StatelessWidget {
   final String title;
+  final TextStyle? titleStyle;
   final IconData? titleIcon;
   final String hint;
   final IconData? prefixIcon;
@@ -21,6 +22,7 @@ class AppTextField extends StatelessWidget {
   const AppTextField({
     super.key,
     required this.title,
+    this.titleStyle,
     this.titleIcon,
     required this.hint,
     this.prefixIcon,
@@ -44,7 +46,7 @@ class AppTextField extends StatelessWidget {
           children: [
             Text(
               title,
-              style: AppTextStyles.style16Bold(context),
+              style: titleStyle ?? AppTextStyles.style16Bold(context),
             ),
             if (titleIcon != null) Icon(titleIcon, size: 18.w),
           ],
@@ -58,7 +60,7 @@ class AppTextField extends StatelessWidget {
           textAlign: textAlign,
           decoration: InputDecoration(
             hintText: hint,
-            hintStyle: AppTextStyles.style14Bold(context, color: AppColors.primary.withValues(alpha: 0.3)),
+            hintStyle: AppTextStyles.style14Bold(context, color: context.textColor.withValues(alpha: 0.6)),
             suffix: suffix,
             suffixIcon: suffixIcon,
             filled: true,

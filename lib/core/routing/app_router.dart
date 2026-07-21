@@ -9,9 +9,15 @@ import 'package:zet/features/auth/presentation/views/welcome_page_view.dart';
 import 'package:zet/features/challenges/presentation/views/challenges_view.dart';
 import 'package:zet/features/home/presentation/views/category_challenges/category_challenges_view.dart';
 import 'package:zet/features/home/presentation/views/home/home_view.dart';
+import 'package:zet/features/more/presentation/views/challenge_history/challenge_history_view.dart';
+import 'package:zet/features/more/presentation/views/bank_account/bank_account_view.dart';
 import 'package:zet/features/more/presentation/views/contact_us/contact_us_view.dart';
+import 'package:zet/features/more/presentation/views/favorite_stores/favorite_stores_view.dart';
+import 'package:zet/features/more/presentation/views/manage_personal_account/manage_personal_account_view.dart';
 import 'package:zet/features/more/presentation/views/more/more_view.dart';
 import 'package:zet/features/more/presentation/views/notifications/notifications_view.dart';
+import 'package:zet/features/more/presentation/views/premium_package/premium_package_view.dart';
+import 'package:zet/features/more/presentation/views/request_transfer/request_transfer_view.dart';
 import 'package:zet/features/more/presentation/views/settings/settings_view.dart';
 import 'package:zet/features/splash/view/splash_view.dart';
 
@@ -155,6 +161,60 @@ class AppRouter {
           context: context,
           state: state,
           child: const ContactUsView(),
+          transitionType: TransitionType.slideFromRight,
+        ),
+      ),
+      GoRoute(
+        path: AppRoutes.challengeHistory,
+        pageBuilder: (context, state) => RouteAnimations.buildPage(
+          context: context,
+          state: state,
+          child: const ChallengeHistoryView(),
+          transitionType: TransitionType.slideFromRight,
+        ),
+      ),
+      GoRoute(
+        path: AppRoutes.requestTransfer,
+        pageBuilder: (context, state) => RouteAnimations.buildPage(
+          context: context,
+          state: state,
+          child: const RequestTransferView(),
+          transitionType: TransitionType.slideFromRight,
+        ),
+      ),
+      GoRoute(
+        path: AppRoutes.favoriteStores,
+        pageBuilder: (context, state) => RouteAnimations.buildPage(
+          context: context,
+          state: state,
+          child: const FavoriteStoresView(),
+          transitionType: TransitionType.slideFromRight,
+        ),
+      ),
+      GoRoute(
+        path: AppRoutes.managePersonalAccount,
+        pageBuilder: (context, state) => RouteAnimations.buildPage(
+          context: context,
+          state: state,
+          child: const ManagePersonalAccountView(),
+          transitionType: TransitionType.slideFromRight,
+        ),
+      ),
+      GoRoute(
+        path: AppRoutes.bankAccount,
+        pageBuilder: (context, state) => RouteAnimations.buildPage(
+          context: context,
+          state: state,
+          child: const BankAccountView(),
+          transitionType: TransitionType.slideFromRight,
+        ),
+      ),
+      GoRoute(
+        path: AppRoutes.premiumPackage,
+        pageBuilder: (context, state) => RouteAnimations.buildPage(
+          context: context,
+          state: state,
+          child: const PremiumPackageView(),
           transitionType: TransitionType.slideFromRight,
         ),
       ),

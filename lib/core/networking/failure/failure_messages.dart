@@ -1,42 +1,45 @@
+import 'package:easy_localization/easy_localization.dart';
+import 'package:zet/core/helpers/locale_keys.dart';
+
 class FailureMessages {
   // ───────────── Network Errors ─────────────
-  static String connectionTimeout = 'انتهت مهلة الاتصال بالخادم، يرجى المحاولة مرة أخرى';
+  static String get connectionTimeout => tr(LocaleKeys.connectionTimeout);
 
-  static String sendTimeout = 'استغرق إرسال الطلب وقتًا طويلًا، يرجى التحقق من اتصالك والمحاولة مرة أخرى';
+  static String get sendTimeout => tr(LocaleKeys.sendTimeout);
 
-  static String receiveTimeout = 'استغرق استلام البيانات وقتًا طويلًا، يرجى المحاولة مرة أخرى';
+  static String get receiveTimeout => tr(LocaleKeys.receiveTimeout);
 
-  static String transformTimeout = 'استغرق معالجة البيانات وقتًا طويلًا، يرجى المحاولة مرة أخرى';
+  static String get transformTimeout => tr(LocaleKeys.receiveTimeout);
 
-  static String noInternet = 'لا يوجد اتصال بالإنترنت، يرجى التحقق من الشبكة والمحاولة مرة أخرى';
+  static String get noInternet => tr(LocaleKeys.noInternet);
 
-  static String connectionError = 'حدث خطأ أثناء الاتصال، يرجى التحقق من الإنترنت والمحاولة لاحقًا';
+  static String get connectionError => tr(LocaleKeys.connectionError);
 
-  static String badCertificate = 'تعذر التحقق من أمان الاتصال، يرجى المحاولة لاحقًا';
+  static String get badCertificate => tr(LocaleKeys.connectionError);
 
   // ───────────── Auth & Permission Errors ─────────────
-  static String unauthorized = 'يرجى تسجيل الدخول مرة أخرى للمتابعة';
+  static String get unauthorized => tr(LocaleKeys.unauthorized);
 
-  static String forbidden = 'ليس لديك صلاحية لتنفيذ هذا الإجراء';
+  static String get forbidden => tr(LocaleKeys.forbidden);
 
   // ───────────── Request & Validation Errors ─────────────
-  static String badRequest = 'الطلب غير صحيح، يرجى مراجعة البيانات والمحاولة مرة أخرى';
+  static String get badRequest => tr(LocaleKeys.badRequest);
 
-  static String invalidDataProvided = 'البيانات المدخلة غير صحيحة، يرجى التحقق منها';
+  static String get invalidDataProvided => tr(LocaleKeys.badRequest);
 
-  static String notFound = 'لم يتم العثور على البيانات المطلوبة';
+  static String get notFound => tr(LocaleKeys.notFound);
 
-  static String requestTimeout = 'انتهت مهلة الطلب، يرجى المحاولة مرة أخرى';
+  static String get requestTimeout => tr(LocaleKeys.connectionTimeout);
 
-  static String conflict = 'يوجد تعارض في البيانات، يرجى التحقق والمحاولة مرة أخرى';
+  static String get conflict => tr(LocaleKeys.badRequest);
 
   // ───────────── Server Errors ─────────────
-  static String internalServerError = 'حدث خطأ في الخادم، يرجى المحاولة لاحقًا';
+  static String get internalServerError => tr(LocaleKeys.internalServerError);
 
-  static String serviceUnavailable = 'الخدمة غير متاحة حاليًا، يرجى المحاولة لاحقًا';
+  static String get serviceUnavailable => tr(LocaleKeys.serviceUnavailable);
 
   // ───────────── General Errors ─────────────
-  static String cancelled = 'تم إلغاء العملية';
+  static String get cancelled => tr(LocaleKeys.cancelled);
 
-  static String unknown = 'حدث خطأ غير متوقع، يرجى المحاولة مرة أخرى';
+  static String get unknown => tr(LocaleKeys.unknown);
 }

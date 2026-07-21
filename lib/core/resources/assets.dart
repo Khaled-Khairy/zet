@@ -36,6 +36,7 @@ abstract class AppSvgs {
   static const String star = 'assets/svgs/star.svg';
   static const String starOutline = 'assets/svgs/star_outline.svg';
   static const String transferRequest = 'assets/svgs/transferRequest.svg';
+  static const String starSquareRounded = 'assets/svgs/star square rounded.svg';
 
   // Settings SVGs
   static const String sun03 = 'assets/svgs/sun-03.svg';
@@ -48,6 +49,9 @@ abstract class AppSvgs {
   static const String instagram = 'assets/svgs/instagram.svg';
   static const String tiktok = 'assets/svgs/tiktok.svg';
   static const String x = 'assets/svgs/x.svg';
+  static const String tempGlobe = 'assets/svgs/tempGlobe.svg';
+  static const String pencilEdit = 'assets/svgs/pencil-edit-02.svg';
+  static const String trash = 'assets/svgs/trash.svg';
 
   // Temp
   static const String gift = 'assets/svgs/gift.svg';

@@ -29,6 +29,7 @@ abstract class LightAppColors {
   static const Color card3 = Color(0xffFFFFFF);
   static const Color surfaceGrey = Color(0xffD9D9D9);
   static const Color actionBorder = Color(0xff000000);
+  static const Color surfaceCard = Color(0xffEDEDED);
 }
 
 abstract class DarkAppColors {
@@ -48,6 +49,7 @@ abstract class DarkAppColors {
   static const Color card3 = Color(0xff161616);
   static const Color surfaceGrey = Color(0xff161616);
   static const Color actionBorder = Color(0xff2B2B2B);
+  static const Color surfaceCard = Color(0xff2C2C2C);
 }
 
 abstract class DynamicColors {
@@ -188,6 +190,14 @@ abstract class DynamicColors {
       dark: DarkAppColors.surfaceGrey,
     );
   }
+
+  static Color surfaceCard(BuildContext context) {
+    return getColor(
+      context,
+      light: LightAppColors.surfaceGrey,
+      dark: DarkAppColors.surfaceGrey,
+    );
+  }
 }
 
 extension AppColorsExtension on BuildContext {
@@ -222,4 +232,6 @@ extension AppColorsExtension on BuildContext {
   Color get card3 => DynamicColors.card3(this);
 
   Color get surfaceGrey => DynamicColors.surfaceGrey(this);
+
+  Color get surfaceCard => DynamicColors.surfaceCard(this);
 }
