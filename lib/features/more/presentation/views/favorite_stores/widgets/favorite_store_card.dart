@@ -3,6 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:zet/core/helpers/app_helpers.dart';
 import 'package:zet/core/resources/colors.dart';
 import 'package:zet/core/resources/styles.dart';
+import 'package:zet/core/widgets/animation_wrapper/bouncing_tap_wrapper.dart';
 
 class FavoriteStoreModel {
   final String title;
@@ -26,7 +27,7 @@ class FavoriteStoreCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return GestureDetector(
+    return BouncingTapWrapper(
       onTap: onTap,
       child: Container(
         padding: EdgeInsets.all(16.r),
@@ -40,7 +41,7 @@ class FavoriteStoreCard extends StatelessWidget {
               width: 64.r,
               height: 64.r,
               decoration: BoxDecoration(
-                color: context.surfaceCard,
+                color: context.card2,
                 borderRadius: BorderRadius.circular(16.r),
               ),
             ),

@@ -3,11 +3,13 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:go_router/go_router.dart';
 import 'package:zet/core/cubit/app_cubit.dart';
 import 'package:zet/core/cubit/app_state.dart';
 import 'package:zet/core/helpers/locale_keys.dart';
 import 'package:zet/core/resources/assets.dart';
 import 'package:zet/core/resources/colors.dart';
+import 'package:zet/core/routing/app_routes.dart';
 import 'package:zet/features/more/presentation/views/settings/widgets/settings_option_item.dart';
 import 'package:zet/features/more/presentation/views/settings/widgets/settings_toggle_pill.dart';
 
@@ -113,7 +115,9 @@ class SettingsBody extends StatelessWidget {
                 BlendMode.srcIn,
               ),
             ),
-            onTap: () {},
+            onTap: () {
+              context.go(AppRoutes.splash);
+            },
           ),
         ],
       ),

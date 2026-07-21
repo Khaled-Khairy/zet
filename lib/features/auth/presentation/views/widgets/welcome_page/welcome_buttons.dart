@@ -6,6 +6,7 @@ import 'package:zet/core/helpers/locale_keys.dart';
 import 'package:zet/core/resources/colors.dart';
 import 'package:zet/core/resources/styles.dart';
 import 'package:zet/core/routing/app_routes.dart';
+import 'package:zet/core/widgets/animation_wrapper/bouncing_tap_wrapper.dart';
 
 class WelcomeButtons extends StatelessWidget {
   const WelcomeButtons({super.key});
@@ -15,7 +16,7 @@ class WelcomeButtons extends StatelessWidget {
     return Column(
       spacing: 16.h,
       children: [
-        GestureDetector(
+        BouncingTapWrapper(
           onTap: () {
             context.push(AppRoutes.signIn);
           },
@@ -30,11 +31,11 @@ class WelcomeButtons extends StatelessWidget {
               child: Text(
                 context.tr(LocaleKeys.createNewAccount),
                 style: AppTextStyles.style20Bold(context),
-              ),
-            ),
+               ),
+             ),
           ),
         ),
-        GestureDetector(
+        BouncingTapWrapper(
           onTap: () {
             context.push(AppRoutes.login);
           },

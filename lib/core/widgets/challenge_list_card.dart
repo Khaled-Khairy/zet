@@ -4,6 +4,7 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:zet/core/resources/assets.dart';
 import 'package:zet/core/resources/colors.dart';
 import 'package:zet/core/resources/styles.dart';
+import 'package:zet/core/widgets/animation_wrapper/bouncing_tap_wrapper.dart';
 
 class ChallengeListCard extends StatelessWidget {
   final String title;
@@ -14,7 +15,7 @@ class ChallengeListCard extends StatelessWidget {
   final VoidCallback? onTap;
   final Widget? trailing;
   final ColorFilter? leadSvgColorFilter;
-
+  final Color? backgroundColor;
   const ChallengeListCard({
     super.key,
     required this.title,
@@ -25,16 +26,17 @@ class ChallengeListCard extends StatelessWidget {
     this.onTap,
     this.trailing,
     this.leadSvgColorFilter,
+    this.backgroundColor,
   });
 
   @override
   Widget build(BuildContext context) {
-    return GestureDetector(
+    return BouncingTapWrapper(
       onTap: onTap,
       child: Container(
         padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 20.h),
         decoration: BoxDecoration(
-          color: DynamicColors.card(context),
+          color: backgroundColor ?? DynamicColors.card3(context),
           borderRadius: BorderRadius.circular(25.r),
         ),
         child: Column(
@@ -73,14 +75,17 @@ class ChallengeListCard extends StatelessWidget {
                 ),
                 Container(
                   height: logoAsset != null ? 80.h : null,
-                  padding: logoAsset != null ? EdgeInsets.all(8.h) : EdgeInsets.symmetric(horizontal: 8.w, vertical: 6.h),
+                  padding: logoAsset != null
+                      ? EdgeInsets.all(8.h)
+                      : EdgeInsets.symmetric(horizontal: 8.w, vertical: 6.h),
                   decoration: BoxDecoration(
                     color: context.card2,
                     borderRadius: BorderRadius.circular(20.r),
                   ),
                   child: Column(
-                    mainAxisAlignment: logoAsset != null ? MainAxisAlignment.spaceBetween : MainAxisAlignment.center,
-                    crossAxisAlignment: CrossAxisAlignment.end,
+                    mainAxisAlignment: logoAsset != null
+                        ? MainAxisAlignment.spaceBetween
+                        : MainAxisAlignment.center,
                     children: [
                       if (logoAsset != null)
                         Container(

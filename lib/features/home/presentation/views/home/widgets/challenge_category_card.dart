@@ -4,6 +4,7 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:zet/core/resources/assets.dart';
 import 'package:zet/core/resources/colors.dart';
 import 'package:zet/core/resources/styles.dart';
+import 'package:zet/core/widgets/animation_wrapper/bouncing_tap_wrapper.dart';
 
 class ChallengeCategoryCard extends StatelessWidget {
   final String title;
@@ -19,7 +20,7 @@ class ChallengeCategoryCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return GestureDetector(
+    return BouncingTapWrapper(
       onTap: onTap,
       child: Container(
         padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 10.h),

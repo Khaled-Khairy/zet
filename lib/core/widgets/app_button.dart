@@ -4,6 +4,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:zet/core/helpers/locale_keys.dart';
 import 'package:zet/core/resources/colors.dart';
 import 'package:zet/core/resources/styles.dart';
+import 'package:zet/core/widgets/animation_wrapper/bouncing_tap_wrapper.dart';
 
 class AppButton extends StatelessWidget {
   final bool enabled;
@@ -17,23 +18,28 @@ class AppButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SizedBox(
-      width: 232.w,
-      height: 74.h,
-      child: ElevatedButton(
-        onPressed: enabled ? onPressed : null,
-        style: ElevatedButton.styleFrom(
-          backgroundColor: DynamicColors.primary(context),
-          disabledBackgroundColor: DynamicColors.primary(context).withValues(alpha: 0.4),
-          overlayColor: Colors.transparent,
-          shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(92.r),
+    return BouncingTapWrapper(
+      onTap: enabled ? onPressed : null,
+      child: SizedBox(
+        width: 232.w,
+        height: 74.h,
+        child: IgnorePointer(
+          child: ElevatedButton(
+            onPressed: enabled ? () {} : null,
+            style: ElevatedButton.styleFrom(
+              backgroundColor: DynamicColors.primary(context),
+              disabledBackgroundColor: DynamicColors.primary(context).withValues(alpha: 0.4),
+              overlayColor: Colors.transparent,
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(92.r),
+              ),
+              elevation: 8,
+            ),
+            child: Text(
+              context.tr(LocaleKeys.confirm),
+              style: AppTextStyles.style20Bold(context, color: Colors.white),
+            ),
           ),
-          elevation: 8,
-        ),
-        child: Text(
-          context.tr(LocaleKeys.confirm),
-          style: AppTextStyles.style20Bold(context, color: Colors.white),
         ),
       ),
     );

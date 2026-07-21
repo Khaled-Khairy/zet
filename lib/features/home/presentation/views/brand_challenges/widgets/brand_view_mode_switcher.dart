@@ -30,7 +30,9 @@ class BrandViewModeSwitcher extends StatelessWidget {
               width: 26.w,
               height: 20.w,
               decoration: BoxDecoration(
-                color: state.brandViewMode == BrandViewMode.list ? AppColors.pink : DynamicColors.sweetGrey(context),
+                color: state.brandViewMode == BrandViewMode.list
+                    ? AppColors.pink
+                    : DynamicColors.mediumGrey(context),
                 borderRadius: BorderRadius.circular(6.r),
               ),
             ),
@@ -47,7 +49,9 @@ class BrandViewModeSwitcher extends StatelessWidget {
                 width: 22.w,
                 height: 22.w,
                 decoration: BoxDecoration(
-                  color: state.brandViewMode == BrandViewMode.grid ? AppColors.pink : DynamicColors.sweetGrey(context),
+                  color: state.brandViewMode == BrandViewMode.grid
+                      ? AppColors.pink
+                      : DynamicColors.mediumGrey(context),
                   borderRadius: BorderRadius.circular(6.r),
                 ),
               ),

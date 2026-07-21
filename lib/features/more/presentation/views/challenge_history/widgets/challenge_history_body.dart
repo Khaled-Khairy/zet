@@ -2,6 +2,8 @@ import 'package:easy_localization/easy_localization.dart' hide TextDirection;
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:zet/core/helpers/locale_keys.dart';
+import 'package:zet/core/widgets/animation_wrapper/animation_wrapper.dart';
+import 'package:zet/core/widgets/animation_wrapper/bouncing_tap_wrapper.dart';
 import 'package:zet/features/more/presentation/views/challenge_history/widgets/challenge_history_card.dart';
 
 class ChallengeHistoryBody extends StatelessWidget {
@@ -36,8 +38,18 @@ class ChallengeHistoryBody extends StatelessWidget {
       itemCount: items.length,
       separatorBuilder: (context, index) => 16.verticalSpace,
       itemBuilder: (context, index) {
-        return ChallengeHistoryCard(
-          model: items[index],
+        return AnimationWrapper(
+          startDelay: Duration(milliseconds: 100 * index),
+          duration: const Duration(milliseconds: 700),
+          curve: Curves.easeOutQuart,
+          offset: 15.0,
+          direction: AppearDirection.fromBottom,
+          child: BouncingTapWrapper(
+            onTap: () {},
+            child: ChallengeHistoryCard(
+              model: items[index],
+            ),
+          ),
         );
       },
     );

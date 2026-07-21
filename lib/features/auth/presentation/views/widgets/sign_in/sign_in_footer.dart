@@ -1,8 +1,10 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:go_router/go_router.dart';
 import 'package:zet/core/helpers/locale_keys.dart';
 import 'package:zet/core/resources/styles.dart';
+import 'package:zet/core/routing/app_routes.dart';
 import 'package:zet/core/widgets/app_button.dart';
 import 'package:zet/features/auth/presentation/views/widgets/sign_in/sign_in_checkbox_row.dart';
 import 'package:zet/features/auth/presentation/views/widgets/sign_in/sign_in_terms_text.dart';
@@ -28,7 +30,9 @@ class SignInFooter extends StatelessWidget {
         ),
         40.verticalSpace,
         AppButton(
-          onPressed: () {},
+          onPressed: () {
+            context.push(AppRoutes.otp);
+          },
         ),
       ],
     );

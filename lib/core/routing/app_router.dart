@@ -29,7 +29,7 @@ class AppRouter {
   AppRouter._();
 
   static final GoRouter router = GoRouter(
-    initialLocation: AppRoutes.home,
+    initialLocation: AppRoutes.splash,
 
     // ---------------------------------------------------------------
     // ERROR PAGE (invalid/unknown route)

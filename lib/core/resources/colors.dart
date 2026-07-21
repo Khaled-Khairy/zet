@@ -50,6 +50,7 @@ abstract class DarkAppColors {
   static const Color surfaceGrey = Color(0xff161616);
   static const Color actionBorder = Color(0xff2B2B2B);
   static const Color surfaceCard = Color(0xff2C2C2C);
+  static const Color mediumGrey = Color(0xff606060);
 }
 
 abstract class DynamicColors {
@@ -198,6 +199,14 @@ abstract class DynamicColors {
       dark: DarkAppColors.surfaceGrey,
     );
   }
+
+  static Color mediumGrey(BuildContext context) {
+    return getColor(
+      context,
+      light: LightAppColors.primaryPlaceHolder,
+      dark: DarkAppColors.mediumGrey,
+    );
+  }
 }
 
 extension AppColorsExtension on BuildContext {
@@ -234,4 +243,6 @@ extension AppColorsExtension on BuildContext {
   Color get surfaceGrey => DynamicColors.surfaceGrey(this);
 
   Color get surfaceCard => DynamicColors.surfaceCard(this);
+
+  Color get mediumGrey => DynamicColors.mediumGrey(this);
 }

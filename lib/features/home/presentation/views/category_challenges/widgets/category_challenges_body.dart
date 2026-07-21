@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:zet/core/resources/colors.dart';
+import 'package:zet/core/widgets/animation_wrapper/animation_wrapper.dart';
 import 'package:zet/core/widgets/challenge_list_card.dart';
 import 'package:zet/features/home/data/models/challenge_category_model.dart';
 import 'package:zet/features/home/presentation/views/category_challenges/widgets/category_header_card.dart';
@@ -24,10 +25,18 @@ class CategoryChallengesBody extends StatelessWidget {
         spacing: 14.h,
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          CategoryHeaderCard(
-            title: category.title,
-            description: category.description,
-            icon: category.icon,
+          AnimationWrapper(
+            startDelay: const Duration(milliseconds: 100),
+            duration: const Duration(milliseconds: 700),
+            curve: Curves.easeOutQuart,
+            offset: 15.0,
+            direction: AppearDirection.fromBottom,
+            child: CategoryHeaderCard(
+              title: category.title,
+              description: category.description,
+              icon: category.icon,
+              iconColor: category.iconColor,
+            ),
           ),
           ListView.separated(
             shrinkWrap: true,
@@ -36,15 +45,22 @@ class CategoryChallengesBody extends StatelessWidget {
             separatorBuilder: (context, index) => 14.verticalSpace,
             itemBuilder: (context, index) {
               final ChallengeItemModel challenge = category.challenges[index];
-              return ChallengeListCard(
-                title: challenge.title,
-                description: challenge.description,
-                rewardAmount: challenge.rewardAmount,
-                logoAsset: challenge.logoAsset,
-                leadSvgAsset: challenge.leadSvgAsset,
-                leadSvgColorFilter: ColorFilter.mode(
-                  context.textColor,
-                  BlendMode.srcIn,
+              return AnimationWrapper(
+                startDelay: Duration(milliseconds: 80 * (index + 2)),
+                duration: const Duration(milliseconds: 700),
+                curve: Curves.easeOutQuart,
+                offset: 15.0,
+                direction: AppearDirection.fromBottom,
+                child: ChallengeListCard(
+                  title: challenge.title,
+                  description: challenge.description,
+                  rewardAmount: challenge.rewardAmount,
+                  logoAsset: challenge.logoAsset,
+                  leadSvgAsset: challenge.leadSvgAsset,
+                  leadSvgColorFilter: ColorFilter.mode(
+                    context.textColor,
+                    BlendMode.srcIn,
+                  ),
                 ),
               );
             },

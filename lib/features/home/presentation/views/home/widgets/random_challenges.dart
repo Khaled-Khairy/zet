@@ -4,6 +4,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:zet/core/helpers/locale_keys.dart';
 import 'package:zet/core/resources/assets.dart';
 import 'package:zet/core/resources/colors.dart';
+import 'package:zet/core/widgets/animation_wrapper/animation_wrapper.dart';
 import 'package:zet/core/widgets/challenge_list_card.dart';
 import 'package:zet/features/home/presentation/views/home/widgets/home_challenges_title.dart';
 
@@ -29,11 +30,20 @@ class RandomChallenges extends StatelessWidget {
             shrinkWrap: true,
             physics: const NeverScrollableScrollPhysics(),
             itemBuilder: (context, index) {
-              return const ChallengeListCard(
-                title: 'تحدي الكرم',
-                description: 'اعزم اهلك على عشاء من مطعمنا وابشر بالمكافئ ...',
-                rewardAmount: '100',
-                logoAsset: AppImages.tempLogo,
+              return AnimationWrapper(
+                startDelay: Duration(milliseconds: 60 * (index % 5)),
+                duration: const Duration(milliseconds: 700),
+                curve: Curves.easeOutQuart,
+                offset: 15.0,
+                direction: AppearDirection.fromBottom,
+                child: ChallengeListCard(
+                  title: 'تحدي الكرم',
+                  description:
+                      'اعزم اهلك على عشاء من مطعمنا وابشر بالمكافئ ...',
+                  rewardAmount: '100',
+                  logoAsset: AppImages.tempLogo,
+                  backgroundColor: DynamicColors.card(context),
+                ),
               );
             },
             separatorBuilder: (context, index) => 16.verticalSpace,

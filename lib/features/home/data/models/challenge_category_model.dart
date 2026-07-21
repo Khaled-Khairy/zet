@@ -102,7 +102,7 @@ class ChallengeCategoryModel {
           title: 'تحديات الشراء',
           description: 'تحديات مصممة خصيصاً لمكافأتك عند الشراء من علاماتك التجارية المفضلة',
           icon: AppSvgs.market,
-          iconColor: AppColors.pink,
+          iconColor: AppColors.cyan,
           challenges: [
             ChallengeItemModel(
               title: 'تحدي الشراء الأول',
@@ -128,7 +128,7 @@ class ChallengeCategoryModel {
           title: 'تحديات التفاعل',
           description: 'تفاعل مع منشوراتنا واشترك في قنواتنا لتحصل على مكافآت فورية',
           icon: AppSvgs.star,
-          iconColor: Color(0xFF9C27B0),
+          iconColor: AppColors.cyan,
           challenges: [
             ChallengeItemModel(
               title: 'تحدي التعليقات',
@@ -154,7 +154,7 @@ class ChallengeCategoryModel {
           title: 'تحديات التقييم',
           description: 'شاركنا رأيك الصادق حول المنتجات والخدمات التي جربتها',
           icon: AppSvgs.starSquareRounded,
-          iconColor: Color(0xFFFFC107),
+          iconColor: AppColors.cyan,
           challenges: [
             ChallengeItemModel(
               title: 'تحدي تقييم التطبيق',
@@ -174,7 +174,7 @@ class ChallengeCategoryModel {
           title: 'تحديات دعوة الأصدقاء',
           description: 'ادعُ أصدقائك للانضمام إلينا واكسب مكافآت مميزة لك ولهم',
           icon: AppSvgs.person,
-          iconColor: Color(0xFF4CAF50),
+          iconColor: AppColors.cyan,
           challenges: [
             ChallengeItemModel(
               title: 'تحدي الدعوة الأولى',

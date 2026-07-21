@@ -3,6 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
 import 'package:zet/core/routing/app_routes.dart';
+import 'package:zet/core/widgets/animation_wrapper/animation_wrapper.dart';
 import 'package:zet/features/home/data/models/brand_model.dart';
 import 'package:zet/features/home/presentation/manager/home_cubit.dart';
 import 'package:zet/features/more/presentation/views/favorite_stores/widgets/favorite_store_card.dart';
@@ -24,17 +25,24 @@ class BrandChallengesListBody extends StatelessWidget {
       separatorBuilder: (context, index) => 16.verticalSpace,
       itemBuilder: (context, index) {
         final brand = brands[index];
-        return FavoriteStoreCard(
-          model: FavoriteStoreModel(
-            title: brand.name,
-            description: brand.description,
+        return AnimationWrapper(
+          startDelay: Duration(milliseconds: 80 * (index % 5)),
+          duration: const Duration(milliseconds: 700),
+          curve: Curves.easeOutQuart,
+          offset: 15.0,
+          direction: AppearDirection.fromBottom,
+          child: FavoriteStoreCard(
+            model: FavoriteStoreModel(
+              title: brand.name,
+              description: brand.description,
+            ),
+            onTap: () {
+              context.push(
+                AppRoutes.brandDetails,
+                extra: context.read<HomeCubit>(),
+              );
+            },
           ),
-          onTap: () {
-            context.push(
-              AppRoutes.brandDetails,
-              extra: context.read<HomeCubit>(),
-            );
-          },
         );
       },
     );
