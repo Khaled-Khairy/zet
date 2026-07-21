@@ -34,7 +34,25 @@ abstract class AppTextStyles {
     );
   }
 
-  // 12
+  // 8
+  static TextStyle style8Regular(BuildContext context, {Color? color}) => _style(context, 8, FontWeightHelper.regular, color: color);
+
+  static TextStyle style8Medium(BuildContext context, {Color? color}) => _style(context, 8, FontWeightHelper.medium, color: color);
+
+  static TextStyle style8SemiBold(BuildContext context, {Color? color}) => _style(context, 8, FontWeightHelper.semiBold, color: color);
+
+  static TextStyle style8Bold(BuildContext context, {Color? color}) => _style(context, 8, FontWeightHelper.bold, color: color);
+
+  // 9
+  static TextStyle style9Regular(BuildContext context, {Color? color}) => _style(context, 9, FontWeightHelper.regular, color: color);
+
+  static TextStyle style9Medium(BuildContext context, {Color? color}) => _style(context, 9, FontWeightHelper.medium, color: color);
+
+  static TextStyle style9SemiBold(BuildContext context, {Color? color}) => _style(context, 9, FontWeightHelper.semiBold, color: color);
+
+  static TextStyle style9Bold(BuildContext context, {Color? color}) => _style(context, 9, FontWeightHelper.bold, color: color);
+
+  // 10
   static TextStyle style10Regular(BuildContext context, {Color? color}) => _style(context, 10, FontWeightHelper.regular, color: color);
 
   static TextStyle style10Medium(BuildContext context, {Color? color}) => _style(context, 10, FontWeightHelper.medium, color: color);
@@ -42,6 +60,15 @@ abstract class AppTextStyles {
   static TextStyle style10SemiBold(BuildContext context, {Color? color}) => _style(context, 10, FontWeightHelper.semiBold, color: color);
 
   static TextStyle style10Bold(BuildContext context, {Color? color}) => _style(context, 10, FontWeightHelper.bold, color: color);
+
+  // 11
+  static TextStyle style11Regular(BuildContext context, {Color? color}) => _style(context, 11, FontWeightHelper.regular, color: color);
+
+  static TextStyle style11Medium(BuildContext context, {Color? color}) => _style(context, 11, FontWeightHelper.medium, color: color);
+
+  static TextStyle style11SemiBold(BuildContext context, {Color? color}) => _style(context, 11, FontWeightHelper.semiBold, color: color);
+
+  static TextStyle style11Bold(BuildContext context, {Color? color}) => _style(context, 11, FontWeightHelper.bold, color: color);
 
   // 12
   static TextStyle style12Regular(BuildContext context, {Color? color}) => _style(context, 12, FontWeightHelper.regular, color: color);

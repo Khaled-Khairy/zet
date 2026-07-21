@@ -25,6 +25,7 @@ abstract class LocaleKeys {
   static const String verifyPhoneNumber = 'verifyPhoneNumber';
   static const String didNotReceiveCode = 'didNotReceiveCode';
   static const String resendCode = 'resendCode';
+  static const String notifications = 'notifications';
   static const String hello = 'hello';
   static const String yourMoney = 'yourMoney';
   static const String challengeCategories = 'challengeCategories';
