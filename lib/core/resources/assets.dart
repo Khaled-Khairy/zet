@@ -59,4 +59,5 @@ abstract class AppSvgs {
 
   // Temp
   static const String gift = 'assets/svgs/gift.svg';
+  static const String share = 'assets/svgs/share.svg';
 }

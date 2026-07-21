@@ -1,4 +1,6 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
+import 'package:zet/core/helpers/locale_keys.dart';
 import 'package:zet/core/resources/colors.dart';
 import 'package:zet/core/widgets/custom_app_bar.dart';
 import 'package:zet/features/home/presentation/views/category_challenges/widgets/category_challenges_body.dart';
@@ -16,7 +18,7 @@ class CategoryChallengesView extends StatelessWidget {
     return Scaffold(
       backgroundColor: DynamicColors.background(context),
       appBar: CustomAppBar(
-        title: title,
+        title: context.tr(LocaleKeys.back),
       ),
       body: CategoryChallengesBody(title: title),
     );

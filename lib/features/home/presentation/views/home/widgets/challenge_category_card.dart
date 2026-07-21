@@ -1,20 +1,20 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:flutter_svg/flutter_svg.dart';
+import 'package:zet/core/resources/assets.dart';
 import 'package:zet/core/resources/colors.dart';
 import 'package:zet/core/resources/styles.dart';
 
 class ChallengeCategoryCard extends StatelessWidget {
   final String title;
-  final Widget icon;
-  final Color? iconContainerColor;
   final VoidCallback? onTap;
+  final String? iconAsset;
 
   const ChallengeCategoryCard({
     super.key,
     required this.title,
-    required this.icon,
-    this.iconContainerColor,
     this.onTap,
+    this.iconAsset,
   });
 
   @override
@@ -41,10 +41,13 @@ class ChallengeCategoryCard extends StatelessWidget {
             Container(
               padding: EdgeInsets.all(10.r),
               decoration: BoxDecoration(
-                color: iconContainerColor ?? AppColors.cyan,
+                color: AppColors.cyan,
                 borderRadius: BorderRadius.circular(12.r),
               ),
-              child: icon,
+              child: SvgPicture.asset(
+                iconAsset ?? AppSvgs.share,
+                colorFilter: ColorFilter.mode(context.textColor, BlendMode.srcIn),
+              ),
             ),
             Text(
               title,

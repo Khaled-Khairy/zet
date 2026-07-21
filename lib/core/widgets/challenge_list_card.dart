@@ -13,6 +13,7 @@ class ChallengeListCard extends StatelessWidget {
   final String? logoAsset;
   final VoidCallback? onTap;
   final Widget? trailing;
+  final ColorFilter? leadSvgColorFilter;
 
   const ChallengeListCard({
     super.key,
@@ -23,6 +24,7 @@ class ChallengeListCard extends StatelessWidget {
     this.logoAsset,
     this.onTap,
     this.trailing,
+    this.leadSvgColorFilter,
   });
 
   @override
@@ -42,7 +44,13 @@ class ChallengeListCard extends StatelessWidget {
               spacing: 8.w,
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
-                if (leadSvgAsset != null) SvgPicture.asset(leadSvgAsset!) else SvgPicture.asset(AppSvgs.gift),
+                if (leadSvgAsset != null)
+                  SvgPicture.asset(
+                    leadSvgAsset!,
+                    colorFilter: leadSvgColorFilter,
+                  )
+                else
+                  SvgPicture.asset(AppSvgs.gift),
                 Expanded(
                   child: Column(
                     spacing: 2.h,
