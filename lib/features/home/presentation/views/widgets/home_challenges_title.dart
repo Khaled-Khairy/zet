@@ -9,12 +9,14 @@ class HomeChallengesTitle extends StatelessWidget {
     this.subTitle,
     this.padding,
     this.trailing,
+    this.crossAxisAlignment = CrossAxisAlignment.start,
   });
 
   final String title;
   final String? subTitle;
   final EdgeInsets? padding;
   final Widget? trailing;
+  final CrossAxisAlignment crossAxisAlignment;
 
   @override
   Widget build(BuildContext context) {
@@ -26,7 +28,7 @@ class HomeChallengesTitle extends StatelessWidget {
         children: [
           Expanded(
             child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
+              crossAxisAlignment: crossAxisAlignment,
               mainAxisSize: MainAxisSize.min,
               children: [
                 Text(

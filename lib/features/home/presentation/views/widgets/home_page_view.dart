@@ -21,39 +21,42 @@ class _HomeHeaderPageViewState extends State<HomeHeaderPageView> {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      children: [
-        SizedBox(
-          height: 150.h,
-          child: PageView.builder(
+    return Padding(
+      padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 12.h),
+      child: Column(
+        children: [
+          SizedBox(
+            height: 150.h,
+            child: PageView.builder(
+              controller: _pageController,
+              itemCount: 5,
+              pageSnapping: true,
+              padEnds: false,
+              itemBuilder: (context, index) {
+                return Container(
+                  margin: EdgeInsets.symmetric(horizontal: 4.w),
+                  decoration: BoxDecoration(
+                    color: DynamicColors.placeHolder(context),
+                    borderRadius: BorderRadius.circular(12.r),
+                  ),
+                );
+              },
+            ),
+          ),
+          12.verticalSpace,
+          SmoothPageIndicator(
             controller: _pageController,
-            itemCount: 5,
-            pageSnapping: true,
-            padEnds: false,
-            itemBuilder: (context, index) {
-              return Container(
-                margin: EdgeInsets.symmetric(horizontal: 4.w),
-                decoration: BoxDecoration(
-                  color: DynamicColors.placeHolder(context),
-                  borderRadius: BorderRadius.circular(12.r),
-                ),
-              );
-            },
+            count: 5,
+            effect: ExpandingDotsEffect(
+              dotHeight: 8.h,
+              dotWidth: 16.w,
+              spacing: 8.w,
+              dotColor: AppColors.placeHolder,
+              activeDotColor: AppColors.pink,
+            ),
           ),
-        ),
-        12.verticalSpace,
-        SmoothPageIndicator(
-          controller: _pageController,
-          count: 5,
-          effect: ExpandingDotsEffect(
-            dotHeight: 8.h,
-            dotWidth: 12.w,
-            spacing: 8.w,
-            dotColor: DynamicColors.sweetGrey(context),
-            activeDotColor: AppColors.pink,
-          ),
-        ),
-      ],
+        ],
+      ),
     );
   }
 }

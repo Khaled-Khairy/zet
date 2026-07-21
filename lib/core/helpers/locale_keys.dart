@@ -79,4 +79,7 @@ abstract class LocaleKeys {
   static const String english = 'english';
   static const String termsOfUse = 'termsOfUse';
   static const String logout = 'logout';
+  static const String remainingTime = 'remainingTime';
+  static const String challengeStatus = 'challengeStatus';
+  static const String challengeExpired = 'challengeExpired';
 }

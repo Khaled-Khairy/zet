@@ -4,7 +4,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:zet/core/helpers/locale_keys.dart';
 import 'package:zet/core/resources/assets.dart';
 import 'package:zet/core/resources/colors.dart';
-import 'package:zet/features/home/presentation/views/widgets/challenge_list_card.dart';
+import 'package:zet/core/widgets/challenge_list_card.dart';
 import 'package:zet/features/home/presentation/views/widgets/home_challenges_title.dart';
 
 class RandomChallenges extends StatelessWidget {
@@ -19,6 +19,7 @@ class RandomChallenges extends StatelessWidget {
         borderRadius: BorderRadius.vertical(top: Radius.circular(25.r)),
       ),
       child: Column(
+        crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           HomeChallengesTitle(
             title: context.tr(LocaleKeys.randomChallenges),

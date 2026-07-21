@@ -7,6 +7,8 @@ abstract class AppColors {
   static const Color primary = Color(0xff2B2B2B);
   static const Color cyan = Color(0xff2BE3FF);
   static const Color offWhite = Color(0xffEDEDED);
+  static const Color placeHolder = Color(0xffE4E4E4);
+  static const Color gray = Color(0xff606060);
 }
 
 abstract class LightAppColors {
@@ -21,6 +23,10 @@ abstract class LightAppColors {
   static const Color primaryPlaceHolder = Color(0xffD9D9D9);
   static const Color placeHolder = Color(0xffE4E4E4);
   static const Color card = Color(0xffFFFFFF);
+  static const Color border = Color(0xffD9D9D9);
+  static const Color cardBackground = Color(0xffFFFFFF);
+  static const Color card2 = Color(0xffEDEDED);
+  static const Color card3 = Color(0xffFFFFFF);
 }
 
 abstract class DarkAppColors {
@@ -34,6 +40,10 @@ abstract class DarkAppColors {
   static const Color primaryPlaceHolder = Color(0xff161616);
   static const Color placeHolder = Color(0xff2B2B2B);
   static const Color card = Color(0xff000000);
+  static const Color border = Color(0xff2B2B2B);
+  static const Color cardBackground = Color(0xff2B2B2B);
+  static const Color card2 = Color(0xff2B2B2B);
+  static const Color card3 = Color(0xff161616);
 }
 
 abstract class DynamicColors {
@@ -126,4 +136,66 @@ abstract class DynamicColors {
       dark: DarkAppColors.card,
     );
   }
+
+  static Color border(BuildContext context) {
+    return getColor(
+      context,
+      light: LightAppColors.border,
+      dark: DarkAppColors.border,
+    );
+  }
+
+  static Color cardBackground(BuildContext context) {
+    return getColor(
+      context,
+      light: LightAppColors.cardBackground,
+      dark: DarkAppColors.cardBackground,
+    );
+  }
+
+  static Color card2(BuildContext context) {
+    return getColor(
+      context,
+      light: LightAppColors.card2,
+      dark: DarkAppColors.card2,
+    );
+  }
+
+  static Color card3(BuildContext context) {
+    return getColor(
+      context,
+      light: LightAppColors.card3,
+      dark: DarkAppColors.card3,
+    );
+  }
+}
+
+extension AppColorsExtension on BuildContext {
+  Color get background => DynamicColors.background(this);
+
+  Color get secondaryBackground => DynamicColors.secondaryBackground(this);
+
+  Color get primaryColor => DynamicColors.primary(this);
+
+  Color get textColor => DynamicColors.textColor(this);
+
+  Color get secondaryTextColor => DynamicColors.secondaryTextColor(this);
+
+  Color get sweetGrey => DynamicColors.sweetGrey(this);
+
+  Color get offText => DynamicColors.offText(this);
+
+  Color get primaryPlaceHolder => DynamicColors.primaryPlaceHolder(this);
+
+  Color get placeHolder => DynamicColors.placeHolder(this);
+
+  Color get card => DynamicColors.card(this);
+
+  Color get border => DynamicColors.border(this);
+
+  Color get cardBackground => DynamicColors.cardBackground(this);
+
+  Color get card2 => DynamicColors.card2(this);
+
+  Color get card3 => DynamicColors.card3(this);
 }

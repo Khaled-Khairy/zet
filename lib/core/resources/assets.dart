@@ -22,6 +22,9 @@ abstract class AppSvgs {
   static const String moreTab = 'assets/svgs/More Tab Icon.svg';
   static const String currency = 'assets/svgs/Currency Icon.svg';
   static const String reward = 'assets/svgs/Reward Icon.svg';
+  static const String target = 'assets/svgs/target-02.svg';
+  static const String play = 'assets/svgs/play.svg';
+  static const String pastChallenges = 'assets/svgs/past_challenges.svg';
 
   // Temp
   static const String gift = 'assets/svgs/gift.svg';

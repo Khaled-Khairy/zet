@@ -6,6 +6,7 @@ abstract class AppTheme {
   AppTheme._();
 
   static final ThemeData lightTheme = ThemeData(
+    brightness: Brightness.light,
     scaffoldBackgroundColor: LightAppColors.background,
     textSelectionTheme: const TextSelectionThemeData(
       selectionColor: LightAppColors.primary,
@@ -38,6 +39,7 @@ abstract class AppTheme {
   );
 
   static final ThemeData darkTheme = ThemeData(
+    brightness: Brightness.dark,
     scaffoldBackgroundColor: DarkAppColors.background,
     textSelectionTheme: const TextSelectionThemeData(
       selectionColor: DarkAppColors.primary,

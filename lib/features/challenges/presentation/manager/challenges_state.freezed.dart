@@ -14,25 +14,64 @@ T _$identity<T>(T value) => value;
 
 /// @nodoc
 mixin _$ChallengesState {
+  ChallengeFilter get filter;
+
+  /// Create a copy of ChallengesState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  $ChallengesStateCopyWith<ChallengesState> get copyWith =>
+      _$ChallengesStateCopyWithImpl<ChallengesState>(
+          this as ChallengesState, _$identity);
+
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is ChallengesState);
+        (other.runtimeType == runtimeType &&
+            other is ChallengesState &&
+            (identical(other.filter, filter) || other.filter == filter));
   }
 
   @override
-  int get hashCode => runtimeType.hashCode;
+  int get hashCode => Object.hash(runtimeType, filter);
 
   @override
   String toString() {
-    return 'ChallengesState()';
+    return 'ChallengesState(filter: $filter)';
   }
 }
 
 /// @nodoc
-class $ChallengesStateCopyWith<$Res> {
-  $ChallengesStateCopyWith(
-      ChallengesState _, $Res Function(ChallengesState) __);
+abstract mixin class $ChallengesStateCopyWith<$Res> {
+  factory $ChallengesStateCopyWith(
+          ChallengesState value, $Res Function(ChallengesState) _then) =
+      _$ChallengesStateCopyWithImpl;
+  @useResult
+  $Res call({ChallengeFilter filter});
+}
+
+/// @nodoc
+class _$ChallengesStateCopyWithImpl<$Res>
+    implements $ChallengesStateCopyWith<$Res> {
+  _$ChallengesStateCopyWithImpl(this._self, this._then);
+
+  final ChallengesState _self;
+  final $Res Function(ChallengesState) _then;
+
+  /// Create a copy of ChallengesState
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? filter = null,
+  }) {
+    return _then(_self.copyWith(
+      filter: null == filter
+          ? _self.filter
+          : filter // ignore: cast_nullable_to_non_nullable
+              as ChallengeFilter,
+    ));
+  }
 }
 
 /// Adds pattern-matching-related methods to [ChallengesState].
@@ -128,13 +167,13 @@ extension ChallengesStatePatterns on ChallengesState {
 
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>(
-    TResult Function()? $default, {
+    TResult Function(ChallengeFilter filter)? $default, {
     required TResult orElse(),
   }) {
     final _that = this;
     switch (_that) {
       case _ChallengesState() when $default != null:
-        return $default();
+        return $default(_that.filter);
       case _:
         return orElse();
     }
@@ -155,12 +194,12 @@ extension ChallengesStatePatterns on ChallengesState {
 
   @optionalTypeArgs
   TResult when<TResult extends Object?>(
-    TResult Function() $default,
+    TResult Function(ChallengeFilter filter) $default,
   ) {
     final _that = this;
     switch (_that) {
       case _ChallengesState():
-        return $default();
+        return $default(_that.filter);
       case _:
         throw StateError('Unexpected subclass');
     }
@@ -180,12 +219,12 @@ extension ChallengesStatePatterns on ChallengesState {
 
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>(
-    TResult? Function()? $default,
+    TResult? Function(ChallengeFilter filter)? $default,
   ) {
     final _that = this;
     switch (_that) {
       case _ChallengesState() when $default != null:
-        return $default();
+        return $default(_that.filter);
       case _:
         return null;
     }
@@ -195,20 +234,69 @@ extension ChallengesStatePatterns on ChallengesState {
 /// @nodoc
 
 class _ChallengesState implements ChallengesState {
-  const _ChallengesState();
+  const _ChallengesState({this.filter = ChallengeFilter.current});
+
+  @override
+  @JsonKey()
+  final ChallengeFilter filter;
+
+  /// Create a copy of ChallengesState
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  _$ChallengesStateCopyWith<_ChallengesState> get copyWith =>
+      __$ChallengesStateCopyWithImpl<_ChallengesState>(this, _$identity);
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _ChallengesState);
+        (other.runtimeType == runtimeType &&
+            other is _ChallengesState &&
+            (identical(other.filter, filter) || other.filter == filter));
   }
 
   @override
-  int get hashCode => runtimeType.hashCode;
+  int get hashCode => Object.hash(runtimeType, filter);
 
   @override
   String toString() {
-    return 'ChallengesState()';
+    return 'ChallengesState(filter: $filter)';
+  }
+}
+
+/// @nodoc
+abstract mixin class _$ChallengesStateCopyWith<$Res>
+    implements $ChallengesStateCopyWith<$Res> {
+  factory _$ChallengesStateCopyWith(
+          _ChallengesState value, $Res Function(_ChallengesState) _then) =
+      __$ChallengesStateCopyWithImpl;
+  @override
+  @useResult
+  $Res call({ChallengeFilter filter});
+}
+
+/// @nodoc
+class __$ChallengesStateCopyWithImpl<$Res>
+    implements _$ChallengesStateCopyWith<$Res> {
+  __$ChallengesStateCopyWithImpl(this._self, this._then);
+
+  final _ChallengesState _self;
+  final $Res Function(_ChallengesState) _then;
+
+  /// Create a copy of ChallengesState
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $Res call({
+    Object? filter = null,
+  }) {
+    return _then(_ChallengesState(
+      filter: null == filter
+          ? _self.filter
+          : filter // ignore: cast_nullable_to_non_nullable
+              as ChallengeFilter,
+    ));
   }
 }
 

@@ -76,5 +76,8 @@
   "arabic": "Arabic",
   "english": "English",
   "termsOfUse": "Terms of Use",
-  "logout": "Logout"
+  "logout": "Logout",
+  "remainingTime": "Remaining Time:",
+  "challengeStatus": "Challenge Status:",
+  "challengeExpired": "The time expired before completing the challenge"
 }

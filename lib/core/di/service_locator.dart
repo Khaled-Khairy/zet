@@ -21,7 +21,8 @@ final GetIt getIt = GetIt.instance;
 
 Future<void> setupServiceLocator() async {
   // 1. Prefs first — everything else may depend on it
-  final SharedPreferences sharedPreferences = await SharedPreferences.getInstance();
+  final SharedPreferences sharedPreferences =
+      await SharedPreferences.getInstance();
   getIt.registerSingleton<SharedPreferences>(sharedPreferences);
 
   // 2. Now it's safe for DioFactory to read tokens/config from prefs
@@ -32,18 +33,23 @@ Future<void> setupServiceLocator() async {
   getIt.registerSingleton<ApiClient>(ApiClient(getIt.get<ApiService>()));
 
   // <================================= AUTH ==================================>
-  getIt.registerLazySingleton<AuthRepo>(() => AuthRepoImpl(getIt.get<ApiClient>()));
+  getIt.registerLazySingleton<AuthRepo>(
+      () => AuthRepoImpl(getIt.get<ApiClient>()));
   getIt.registerFactory<AuthCubit>(() => AuthCubit(getIt.get<AuthRepo>()));
 
   // <================================= HOME ==================================>
-  getIt.registerLazySingleton<HomeRepo>(() => HomeRepoImpl(getIt.get<ApiClient>()));
+  getIt.registerLazySingleton<HomeRepo>(
+      () => HomeRepoImpl(getIt.get<ApiClient>()));
   getIt.registerFactory<HomeCubit>(() => HomeCubit(getIt.get<HomeRepo>()));
 
   // <============================== CHALLENGES ===============================>
-  getIt.registerLazySingleton<ChallengesRepo>(() => ChallengesRepoImpl(getIt.get<ApiClient>()));
-  getIt.registerFactory<ChallengesCubit>(() => ChallengesCubit(getIt.get<ChallengesRepo>()));
+  getIt.registerLazySingleton<ChallengesRepo>(
+      () => ChallengesRepoImpl(getIt.get<ApiClient>()));
+  getIt.registerFactory<ChallengesCubit>(
+      () => ChallengesCubit(getIt.get<ChallengesRepo>()));
 
   // <================================= MORE ==================================>
-  getIt.registerLazySingleton<MoreRepo>(() => MoreRepoImpl(getIt.get<ApiClient>()));
+  getIt.registerLazySingleton<MoreRepo>(
+      () => MoreRepoImpl(getIt.get<ApiClient>()));
   getIt.registerFactory<MoreCubit>(() => MoreCubit(getIt.get<MoreRepo>()));
 }
