@@ -29,8 +29,6 @@ class ChallengesBlocBuilder extends StatelessWidget {
                 description: 'اعزم اهلك على عشاء من مطعمنا وابشر بالمكافئ ...',
                 rewardAmount: '100',
                 logoAsset: AppImages.tempLogo,
-                rewardIconAsset: AppSvgs.reward,
-                currencyIconAsset: AppSvgs.currency,
                 trailing: Row(
                   spacing: 4.w,
                   children: [
@@ -75,8 +73,6 @@ class ChallengesBlocBuilder extends StatelessWidget {
                 description: 'اعزم اهلك على عشاء من مطعمنا وابشر بالمكافئ ...',
                 rewardAmount: '100',
                 logoAsset: AppImages.tempLogo,
-                rewardIconAsset: AppSvgs.reward,
-                currencyIconAsset: AppSvgs.currency,
                 trailing: Padding(
                   padding: EdgeInsets.symmetric(horizontal: 12.w),
                   child: Wrap(

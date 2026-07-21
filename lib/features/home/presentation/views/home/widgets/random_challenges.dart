@@ -34,8 +34,6 @@ class RandomChallenges extends StatelessWidget {
                 description: 'اعزم اهلك على عشاء من مطعمنا وابشر بالمكافئ ...',
                 rewardAmount: '100',
                 logoAsset: AppImages.tempLogo,
-                rewardIconAsset: AppSvgs.reward,
-                currencyIconAsset: AppSvgs.currency,
               );
             },
             separatorBuilder: (context, index) => 16.verticalSpace,

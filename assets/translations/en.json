@@ -110,5 +110,15 @@
   "internalServerError": "Server error occurred, please try later",
   "serviceUnavailable": "Service currently unavailable, please try later",
   "cancelled": "Operation cancelled",
-  "unknown": "An unexpected error occurred, please try again"
+  "unknown": "An unexpected error occurred, please try again",
+  "officialWebsite": "Official\nWebsite",
+  "instagramAccount": "Instagram\nAccount",
+  "tiktokAccount": "TikTok\nAccount",
+  "downloadApp": "Download\nApp",
+  "challenges": "Challenges",
+  "reviews": "Reviews",
+  "subscribe": "Subscribe",
+  "subscribed": "Subscribed",
+  "companyDetailedDescription": "Short description of the company added by the company from its dashboard to display to users",
+  "noReviewsYet": "No reviews yet"
 }

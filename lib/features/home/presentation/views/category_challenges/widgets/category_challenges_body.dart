@@ -24,8 +24,6 @@ class CategoryChallengesBody extends StatelessWidget {
           description: 'اعزم اهلك على عشاء من مطعمنا وابشر بالمكافئ ...',
           rewardAmount: '100',
           logoAsset: AppImages.tempLogo,
-          rewardIconAsset: AppSvgs.reward,
-          currencyIconAsset: AppSvgs.currency,
         );
       },
     );

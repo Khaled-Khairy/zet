@@ -17,13 +17,11 @@ class ContactUsBody extends StatelessWidget {
         ContactUsOptionItem(
           title: context.tr(LocaleKeys.directWhatsappChat),
           iconAsset: AppSvgs.whatsapp,
-          isSvg: true,
           onTap: () {},
         ),
         ContactUsOptionItem(
           title: context.tr(LocaleKeys.addYourStore),
           iconAsset: AppSvgs.storeAdd,
-          isSvg: true,
           onTap: () {},
         ),
         const Spacer(),
@@ -35,19 +33,16 @@ class ContactUsBody extends StatelessWidget {
               ContactUsSocialCard(
                 title: context.tr(LocaleKeys.instagram),
                 iconAsset: AppSvgs.instagram,
-                isSvg: true,
                 onTap: () {},
               ),
               ContactUsSocialCard(
                 title: context.tr(LocaleKeys.tiktok),
                 iconAsset: AppSvgs.tiktok,
-                isSvg: true,
                 onTap: () {},
               ),
               ContactUsSocialCard(
                 title: context.tr(LocaleKeys.xSocial),
                 iconAsset: AppSvgs.x,
-                isSvg: true,
                 onTap: () {},
               ),
             ],

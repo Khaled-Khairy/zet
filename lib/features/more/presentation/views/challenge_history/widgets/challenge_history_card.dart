@@ -9,6 +9,7 @@ import 'package:zet/core/helpers/locale_keys.dart';
 import 'package:zet/core/resources/assets.dart';
 import 'package:zet/core/resources/colors.dart';
 import 'package:zet/core/resources/styles.dart';
+import 'package:zet/core/widgets/reward_badge.dart';
 
 class ChallengeHistoryCardModel {
   final String title;
@@ -81,41 +82,7 @@ class ChallengeHistoryCard extends StatelessWidget {
                 ),
               ),
               12.horizontalSpace,
-              Container(
-                padding: EdgeInsets.symmetric(horizontal: 10.w, vertical: 6.h),
-                decoration: BoxDecoration(
-                  color: DynamicColors.background(context),
-                  borderRadius: BorderRadius.circular(16.r),
-                ),
-                child: Row(
-                  mainAxisSize: MainAxisSize.min,
-                  spacing: 4.w,
-                  children: [
-                    SvgPicture.asset(
-                      AppSvgs.reward,
-                      width: 12.w,
-                      height: 12.h,
-                      colorFilter: const ColorFilter.mode(
-                        AppColors.pink,
-                        BlendMode.srcIn,
-                      ),
-                    ),
-                    Text(
-                      model.rewardAmount,
-                      style: AppTextStyles.style11Bold(context),
-                    ),
-                    SvgPicture.asset(
-                      AppSvgs.currency,
-                      width: 12.w,
-                      height: 12.h,
-                      colorFilter: ColorFilter.mode(
-                        context.textColor,
-                        BlendMode.srcIn,
-                      ),
-                    ),
-                  ],
-                ),
-              ),
+              RewardBadge(rewardAmount: model.rewardAmount),
             ],
           ),
           Container(

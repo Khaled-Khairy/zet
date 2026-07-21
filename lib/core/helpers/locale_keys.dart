@@ -113,4 +113,14 @@ abstract class LocaleKeys {
   static const String serviceUnavailable = 'serviceUnavailable';
   static const String cancelled = 'cancelled';
   static const String unknown = 'unknown';
+  static const String officialWebsite = 'officialWebsite';
+  static const String instagramAccount = 'instagramAccount';
+  static const String tiktokAccount = 'tiktokAccount';
+  static const String downloadApp = 'downloadApp';
+  static const String challenges = 'challenges';
+  static const String reviews = 'reviews';
+  static const String subscribe = 'subscribe';
+  static const String subscribed = 'subscribed';
+  static const String companyDetailedDescription = 'companyDetailedDescription';
+  static const String noReviewsYet = 'noReviewsYet';
 }

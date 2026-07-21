@@ -52,6 +52,10 @@ abstract class AppSvgs {
   static const String tempGlobe = 'assets/svgs/tempGlobe.svg';
   static const String pencilEdit = 'assets/svgs/pencil-edit-02.svg';
   static const String trash = 'assets/svgs/trash.svg';
+  static const String download = 'assets/svgs/download.svg';
+  static const String instagram2 = 'assets/svgs/instagram2.svg';
+  static const String market2 = 'assets/svgs/market2.svg';
+  static const String tiktok2 = 'assets/svgs/tiktok2.svg';
 
   // Temp
   static const String gift = 'assets/svgs/gift.svg';

@@ -68,7 +68,7 @@ class FavoriteStoreCard extends StatelessWidget {
             ),
             12.horizontalSpace,
             RotatedBox(
-              quarterTurns: context.isRtl ? 0 : 2,
+              quarterTurns: context.isLtr ? 0 : 2,
               child: Icon(
                 Icons.arrow_left_rounded,
                 size: 28.r,

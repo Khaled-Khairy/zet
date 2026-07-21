@@ -10,9 +10,7 @@ class ChallengeListCard extends StatelessWidget {
   final String description;
   final String rewardAmount;
   final String? leadSvgAsset;
-  final String logoAsset;
-  final String rewardIconAsset;
-  final String currencyIconAsset;
+  final String? logoAsset;
   final VoidCallback? onTap;
   final Widget? trailing;
 
@@ -22,9 +20,7 @@ class ChallengeListCard extends StatelessWidget {
     required this.description,
     required this.rewardAmount,
     this.leadSvgAsset,
-    required this.logoAsset,
-    required this.rewardIconAsset,
-    required this.currencyIconAsset,
+    this.logoAsset,
     this.onTap,
     this.trailing,
   });
@@ -34,7 +30,7 @@ class ChallengeListCard extends StatelessWidget {
     return GestureDetector(
       onTap: onTap,
       child: Container(
-        padding: EdgeInsets.symmetric(horizontal: 12.w, vertical: 8.h),
+        padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 20.h),
         decoration: BoxDecoration(
           color: DynamicColors.card(context),
           borderRadius: BorderRadius.circular(25.r),
@@ -68,35 +64,39 @@ class ChallengeListCard extends StatelessWidget {
                   ),
                 ),
                 Container(
-                  height: 80.h,
-                  padding: EdgeInsets.all(8.h),
+                  height: logoAsset != null ? 80.h : null,
+                  padding: logoAsset != null ? EdgeInsets.all(8.h) : EdgeInsets.symmetric(horizontal: 8.w, vertical: 6.h),
                   decoration: BoxDecoration(
                     color: context.card2,
                     borderRadius: BorderRadius.circular(20.r),
                   ),
                   child: Column(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    mainAxisAlignment: logoAsset != null ? MainAxisAlignment.spaceBetween : MainAxisAlignment.center,
+                    crossAxisAlignment: CrossAxisAlignment.end,
                     children: [
-                      Container(
-                        decoration: BoxDecoration(
-                          color: DynamicColors.card(context),
-                          borderRadius: BorderRadius.circular(19.r),
-                        ),
-                        child: ClipRRect(
-                          borderRadius: BorderRadius.circular(19.r),
-                          child: Image.asset(
-                            logoAsset,
-                            width: 60.w,
-                            height: 44.w,
-                            fit: BoxFit.cover,
+                      if (logoAsset != null)
+                        Container(
+                          margin: EdgeInsets.only(bottom: 4.h),
+                          decoration: BoxDecoration(
+                            color: DynamicColors.card(context),
+                            borderRadius: BorderRadius.circular(19.r),
+                          ),
+                          child: ClipRRect(
+                            borderRadius: BorderRadius.circular(19.r),
+                            child: Image.asset(
+                              logoAsset!,
+                              width: 60.w,
+                              height: 44.w,
+                              fit: BoxFit.cover,
+                            ),
                           ),
                         ),
-                      ),
                       Row(
+                        mainAxisSize: MainAxisSize.min,
                         spacing: 3.w,
                         children: [
                           SvgPicture.asset(
-                            rewardIconAsset,
+                            AppSvgs.reward,
                             width: 10.w,
                             height: 10.h,
                           ),
@@ -105,12 +105,12 @@ class ChallengeListCard extends StatelessWidget {
                             style: AppTextStyles.style10Bold(context),
                           ),
                           SvgPicture.asset(
-                            currencyIconAsset,
+                            AppSvgs.currency,
                             width: 10.w,
                             height: 10.h,
                           ),
                         ],
-                      )
+                      ),
                     ],
                   ),
                 ),

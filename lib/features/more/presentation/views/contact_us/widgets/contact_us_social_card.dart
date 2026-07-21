@@ -40,16 +40,15 @@ class ContactUsSocialCard extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceAround,
           children: [
-            if (isSvg)
-              SvgPicture.asset(
-                iconAsset,
-                width: 24.w,
-                height: 24.h,
-                colorFilter: ColorFilter.mode(
-                  context.textColor,
-                  BlendMode.srcIn,
-                ),
+            SvgPicture.asset(
+              iconAsset,
+              width: 24.w,
+              height: 24.h,
+              colorFilter: ColorFilter.mode(
+                context.textColor,
+                BlendMode.srcIn,
               ),
+            ),
             Container(
               width: double.infinity,
               padding: EdgeInsets.symmetric(vertical: 6.h),

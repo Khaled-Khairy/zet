@@ -8,7 +8,11 @@ import 'package:zet/features/auth/presentation/views/sign_in_view.dart';
 import 'package:zet/features/auth/presentation/views/welcome_page_view.dart';
 import 'package:zet/features/challenges/presentation/views/challenges_view.dart';
 import 'package:zet/features/home/presentation/views/category_challenges/category_challenges_view.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:zet/features/home/presentation/views/home/home_view.dart';
+import 'package:zet/features/home/presentation/views/brand_challenges/brand_challenges_view.dart';
+import 'package:zet/features/home/presentation/views/brand_challenges/brand_details_view.dart';
+import 'package:zet/features/home/presentation/manager/home_cubit.dart';
 import 'package:zet/features/more/presentation/views/challenge_history/challenge_history_view.dart';
 import 'package:zet/features/more/presentation/views/bank_account/bank_account_view.dart';
 import 'package:zet/features/more/presentation/views/contact_us/contact_us_view.dart';
@@ -217,6 +221,36 @@ class AppRouter {
           child: const PremiumPackageView(),
           transitionType: TransitionType.slideFromRight,
         ),
+      ),
+      GoRoute(
+        path: AppRoutes.brandChallenges,
+        pageBuilder: (context, state) {
+          final homeCubit = state.extra as HomeCubit;
+          return RouteAnimations.buildPage(
+            context: context,
+            state: state,
+            child: BlocProvider.value(
+              value: homeCubit,
+              child: const BrandChallengesView(),
+            ),
+            transitionType: TransitionType.slideFromRight,
+          );
+        },
+      ),
+      GoRoute(
+        path: AppRoutes.brandDetails,
+        pageBuilder: (context, state) {
+          final homeCubit = state.extra as HomeCubit;
+          return RouteAnimations.buildPage(
+            context: context,
+            state: state,
+            child: BlocProvider.value(
+              value: homeCubit,
+              child: const BrandDetailsView(),
+            ),
+            transitionType: TransitionType.slideFromRight,
+          );
+        },
       ),
     ],
   );

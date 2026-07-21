@@ -10,13 +10,11 @@ class ContactUsOptionItem extends StatelessWidget {
     super.key,
     required this.title,
     required this.iconAsset,
-    this.isSvg = true,
     this.onTap,
   });
 
   final String title;
   final String iconAsset;
-  final bool isSvg;
   final VoidCallback? onTap;
 
   @override
@@ -32,16 +30,15 @@ class ContactUsOptionItem extends StatelessWidget {
               mainAxisSize: MainAxisSize.min,
               spacing: 12.w,
               children: [
-                if (isSvg)
-                  SvgPicture.asset(
-                    iconAsset,
-                    width: 22.w,
-                    height: 22.h,
-                    colorFilter: ColorFilter.mode(
-                      context.textColor,
-                      BlendMode.srcIn,
-                    ),
+                SvgPicture.asset(
+                  iconAsset,
+                  width: 22.w,
+                  height: 22.h,
+                  colorFilter: ColorFilter.mode(
+                    context.textColor,
+                    BlendMode.srcIn,
                   ),
+                ),
                 Text(
                   title,
                   style: AppTextStyles.style12Bold(context),
@@ -53,7 +50,7 @@ class ContactUsOptionItem extends StatelessWidget {
               quarterTurns: context.isRtl ? 2 : 0,
               child: Icon(
                 Icons.play_arrow_rounded,
-                size: 26.r,
+                size: 16.r,
                 color: context.textColor,
               ),
             ),

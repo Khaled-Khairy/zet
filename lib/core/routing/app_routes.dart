@@ -12,6 +12,8 @@ abstract class AppRoutes {
   static const settings = '/settings';
   static const notifications = '/notifications';
   static const categoryChallenges = '/categoryChallenges';
+  static const brandChallenges = '/brandChallenges';
+  static const brandDetails = '/brandDetails';
   static const contactUs = '/contactUs';
   static const challengeHistory = '/challengeHistory';
   static const requestTransfer = '/requestTransfer';
