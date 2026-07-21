@@ -83,4 +83,6 @@ abstract class LocaleKeys {
   static const String remainingTime = 'remainingTime';
   static const String challengeStatus = 'challengeStatus';
   static const String challengeExpired = 'challengeExpired';
+  static const String today = 'today';
+  static const String yesterday = 'yesterday';
 }

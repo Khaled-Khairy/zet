@@ -9,4 +9,6 @@ abstract class AppRoutes {
   static const home = '/home';
   static const challenges = '/challenges';
   static const more = '/more';
+  static const settings = '/settings';
+  static const notifications = '/notifications';
 }

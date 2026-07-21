@@ -40,7 +40,7 @@ class ChallengeFilterButton extends StatelessWidget {
           borderRadius: BorderRadius.circular(18.r),
         ),
         child: Row(
-          mainAxisAlignment: mainAxisAlignment,
+          mainAxisAlignment: MainAxisAlignment.center,
           children: [
             SvgPicture.asset(
               iconAsset,
@@ -57,9 +57,14 @@ class ChallengeFilterButton extends StatelessWidget {
                       BlendMode.srcIn,
                     ),
             ),
-            Text(
-              label,
-              style: AppTextStyles.style12Bold(context),
+            8.horizontalSpace,
+            Flexible(
+              child: Text(
+                label,
+                style: AppTextStyles.style12Bold(context),
+                softWrap: true,
+                maxLines: 2,
+              ),
             ),
           ],
         ),

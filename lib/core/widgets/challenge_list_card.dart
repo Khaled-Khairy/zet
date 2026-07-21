@@ -57,10 +57,12 @@ class ChallengeListCard extends StatelessWidget {
                         title,
                         style: AppTextStyles.style13Bold(context),
                         textAlign: TextAlign.start,
+                        softWrap: true,
                       ),
                       Text(
                         description,
                         style: AppTextStyles.style10Regular(context),
+                        softWrap: true,
                       ),
                     ],
                   ),

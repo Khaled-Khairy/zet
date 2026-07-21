@@ -80,5 +80,7 @@
   "logout": "تسجيل خروج من الحساب",
   "remainingTime": "الوقت المتبقي:",
   "challengeStatus": "حالة التحدي:",
-  "challengeExpired": "تم انتهاء الوقت قبل تنفيذ التحدي"
+  "challengeExpired": "تم انتهاء الوقت قبل تنفيذ التحدي",
+  "today": "اليوم",
+  "yesterday": "امس"
 }

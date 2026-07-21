@@ -46,13 +46,12 @@ class HomeAppBar extends StatelessWidget implements PreferredSizeWidget {
                 ),
               ],
             ),
-            Padding(
-              padding: EdgeInsets.only(right: 25.w),
-              child: Image.asset(
-                AppImages.zetLogoLight,
-                width: 50.w,
-                height: 37.h,
-              ),
+            Image.asset(
+              Theme.of(context).brightness == Brightness.dark
+                  ? AppImages.zetLogoDark
+                  : AppImages.zetLogoLight,
+              width: 50.w,
+              height: 37.h,
             ),
           ],
         ),

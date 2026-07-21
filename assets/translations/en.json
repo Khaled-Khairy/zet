@@ -80,5 +80,7 @@
   "logout": "Logout",
   "remainingTime": "Remaining Time:",
   "challengeStatus": "Challenge Status:",
-  "challengeExpired": "The time expired before completing the challenge"
+  "challengeExpired": "The time expired before completing the challenge",
+  "today": "Today",
+  "yesterday": "Yesterday"
 }

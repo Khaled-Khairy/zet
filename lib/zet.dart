@@ -1,6 +1,10 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:zet/core/cubit/app_cubit.dart';
+import 'package:zet/core/cubit/app_state.dart';
+import 'package:zet/core/di/service_locator.dart';
 import 'package:zet/core/resources/theme.dart';
 import 'package:zet/core/routing/app_router.dart';
 
@@ -9,24 +13,31 @@ class Zet extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ScreenUtilInit(
-      designSize: const Size(375, 812),
-      minTextAdapt: true,
-      ensureScreenSize: true,
-      splitScreenMode: true,
-      builder: (context, child) {
-        return MaterialApp.router(
-          localizationsDelegates: context.localizationDelegates,
-          supportedLocales: context.supportedLocales,
-          locale: context.locale,
-          debugShowCheckedModeBanner: false,
-          title: 'Zet',
-          routerConfig: AppRouter.router,
-          theme: AppTheme.lightTheme,
-          darkTheme: AppTheme.darkTheme,
-          themeMode: ThemeMode.light,
-        );
-      },
+    return BlocProvider(
+      create: (context) => getIt<AppCubit>(),
+      child: BlocBuilder<AppCubit, AppState>(
+        builder: (context, state) {
+          return ScreenUtilInit(
+            designSize: const Size(375, 812),
+            minTextAdapt: true,
+            ensureScreenSize: true,
+            splitScreenMode: true,
+            builder: (context, child) {
+              return MaterialApp.router(
+                localizationsDelegates: context.localizationDelegates,
+                supportedLocales: context.supportedLocales,
+                locale: context.locale,
+                debugShowCheckedModeBanner: false,
+                title: 'Zet',
+                routerConfig: AppRouter.router,
+                theme: AppTheme.lightTheme,
+                darkTheme: AppTheme.darkTheme,
+                themeMode: state.themeMode,
+              );
+            },
+          );
+        },
+      ),
     );
   }
 }

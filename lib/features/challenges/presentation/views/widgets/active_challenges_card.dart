@@ -30,20 +30,23 @@ class ActiveChallengesCard extends StatelessWidget {
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                Column(
-                  spacing: 4.h,
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text(
-                      '${context.tr(LocaleKeys.hello)} محمد',
-                      style: AppTextStyles.style15Bold(context),
-                    ),
-                    Text(
-                      context.tr(LocaleKeys.challengePageDescription),
-                      style: AppTextStyles.style12Regular(context),
-                    ),
-                  ],
+                Expanded(
+                  child: Column(
+                    spacing: 4.h,
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(
+                        '${context.tr(LocaleKeys.hello)} محمد',
+                        style: AppTextStyles.style15Bold(context),
+                      ),
+                      Text(
+                        context.tr(LocaleKeys.challengePageDescription),
+                        style: AppTextStyles.style12Regular(context),
+                      ),
+                    ],
+                  ),
                 ),
+                12.horizontalSpace,
                 SvgPicture.asset(
                   AppSvgs.target,
                   width: 63.w,

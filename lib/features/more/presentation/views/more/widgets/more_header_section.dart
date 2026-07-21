@@ -4,7 +4,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:zet/core/helpers/locale_keys.dart';
 import 'package:zet/core/resources/colors.dart';
 import 'package:zet/core/resources/styles.dart';
-import 'package:zet/features/more/presentation/views/widgets/more_action_buttons_row.dart';
+import 'package:zet/features/more/presentation/views/more/widgets/more_action_buttons_row.dart';
 
 class MoreHeaderSection extends StatelessWidget {
   const MoreHeaderSection({

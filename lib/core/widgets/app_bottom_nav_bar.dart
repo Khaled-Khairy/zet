@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:go_router/go_router.dart';
+import 'package:zet/core/helpers/app_helpers.dart';
 import 'package:zet/core/resources/assets.dart';
 import 'package:zet/core/resources/colors.dart';
 import 'package:zet/core/routing/app_routes.dart';
@@ -32,6 +33,7 @@ class AppBottomNavBar extends StatelessWidget {
             activeColor: AppColors.cyan,
             onTap: () => context.go(AppRoutes.challenges),
             size: 32,
+            rotateInEnglish: true,
           ),
           _NavItem(
             icon: AppSvgs.homeTab,
@@ -59,6 +61,7 @@ class _NavItem extends StatelessWidget {
   final Color activeColor;
   final VoidCallback? onTap;
   final double size;
+  final bool rotateInEnglish;
 
   static const Color _inactiveColor = Color(0xFF606060);
   static const Color _shadowColor = Color(0x40000000);
@@ -71,11 +74,24 @@ class _NavItem extends StatelessWidget {
     required this.activeColor,
     required this.size,
     this.onTap,
+    this.rotateInEnglish = false,
   });
 
   @override
   Widget build(BuildContext context) {
     final Color color = isActive ? activeColor : _inactiveColor;
+    final bool shouldRotate = rotateInEnglish && context.isEnglish;
+
+    Widget buildSvg({ColorFilter? colorFilter}) {
+      final svg = SvgPicture.asset(
+        icon,
+        width: size.w,
+        height: size.h,
+        fit: BoxFit.contain,
+        colorFilter: colorFilter ?? ColorFilter.mode(color, BlendMode.srcIn),
+      );
+      return shouldRotate ? RotatedBox(quarterTurns: 2, child: svg) : svg;
+    }
 
     return Expanded(
       child: GestureDetector(
@@ -94,11 +110,7 @@ class _NavItem extends StatelessWidget {
                           sigmaX: _shadowBlurSigma,
                           sigmaY: _shadowBlurSigma,
                         ),
-                        child: SvgPicture.asset(
-                          icon,
-                          width: size.w,
-                          height: size.h,
-                          fit: BoxFit.contain,
+                        child: buildSvg(
                           colorFilter: const ColorFilter.mode(
                             _shadowColor,
                             BlendMode.srcIn,
@@ -106,22 +118,10 @@ class _NavItem extends StatelessWidget {
                         ),
                       ),
                     ),
-                    SvgPicture.asset(
-                      icon,
-                      width: size.w,
-                      height: size.h,
-                      fit: BoxFit.contain,
-                      colorFilter: ColorFilter.mode(color, BlendMode.srcIn),
-                    ),
+                    buildSvg(),
                   ],
                 )
-              : SvgPicture.asset(
-                  icon,
-                  width: size.w,
-                  height: size.h,
-                  fit: BoxFit.contain,
-                  colorFilter: ColorFilter.mode(color, BlendMode.srcIn),
-                ),
+              : buildSvg(),
         ),
       ),
     );

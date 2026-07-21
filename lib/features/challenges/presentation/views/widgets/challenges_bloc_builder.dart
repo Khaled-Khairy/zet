@@ -79,8 +79,9 @@ class ChallengesBlocBuilder extends StatelessWidget {
                 currencyIconAsset: AppSvgs.currency,
                 trailing: Padding(
                   padding: EdgeInsets.symmetric(horizontal: 12.w),
-                  child: Row(
+                  child: Wrap(
                     spacing: 4.w,
+                    crossAxisAlignment: WrapCrossAlignment.center,
                     children: [
                       Text(
                         context.tr(LocaleKeys.challengeStatus),

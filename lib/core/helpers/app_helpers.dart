@@ -1,4 +1,4 @@
-import 'package:easy_localization/easy_localization.dart' hide TextDirection;
+import 'package:easy_localization/easy_localization.dart' as ez;
 import 'package:flutter/material.dart';
 
 abstract class AppHelpers {

@@ -2,11 +2,13 @@ import 'package:easy_localization/easy_localization.dart' as ez;
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:go_router/go_router.dart';
 import 'package:zet/core/helpers/app_helpers.dart';
 import 'package:zet/core/helpers/locale_keys.dart';
 import 'package:zet/core/resources/assets.dart';
 import 'package:zet/core/resources/colors.dart';
 import 'package:zet/core/resources/styles.dart';
+import 'package:zet/core/routing/app_routes.dart';
 
 class MoreOptionsSection extends StatelessWidget {
   const MoreOptionsSection({super.key});
@@ -48,7 +50,7 @@ class MoreOptionsSection extends StatelessWidget {
             width: 22.w,
             height: 20.h,
             showArrow: true,
-            onTap: () {},
+            onTap: () => context.push(AppRoutes.settings),
           ),
           _MoreOptionItem(
             title: context.tr(LocaleKeys.shareApp),

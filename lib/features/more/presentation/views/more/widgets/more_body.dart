@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:zet/core/resources/styles.dart';
 import 'package:zet/core/widgets/app_bottom_nav_bar.dart';
-import 'package:zet/features/more/presentation/views/widgets/more_header_section.dart';
-import 'package:zet/features/more/presentation/views/widgets/more_options_section.dart';
+import 'package:zet/features/more/presentation/views/more/widgets/more_header_section.dart';
+import 'package:zet/features/more/presentation/views/more/widgets/more_options_section.dart';
 
 class MoreBody extends StatelessWidget {
   const MoreBody({super.key});

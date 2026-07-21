@@ -8,7 +8,9 @@ import 'package:zet/features/auth/presentation/views/sign_in_view.dart';
 import 'package:zet/features/auth/presentation/views/welcome_page_view.dart';
 import 'package:zet/features/challenges/presentation/views/challenges_view.dart';
 import 'package:zet/features/home/presentation/views/home_view.dart';
-import 'package:zet/features/more/presentation/views/more_view.dart';
+import 'package:zet/features/more/presentation/views/more/more_view.dart';
+import 'package:zet/features/more/presentation/views/notifications/notifications_view.dart';
+import 'package:zet/features/more/presentation/views/settings/settings_view.dart';
 import 'package:zet/features/splash/view/splash_view.dart';
 
 class AppRouter {
@@ -113,6 +115,24 @@ class AppRouter {
           state: state,
           child: const MoreView(),
           transitionType: TransitionType.fade,
+        ),
+      ),
+      GoRoute(
+        path: AppRoutes.settings,
+        pageBuilder: (context, state) => RouteAnimations.buildPage(
+          context: context,
+          state: state,
+          child: const SettingsView(),
+          transitionType: TransitionType.slideFromRight,
+        ),
+      ),
+      GoRoute(
+        path: AppRoutes.notifications,
+        pageBuilder: (context, state) => RouteAnimations.buildPage(
+          context: context,
+          state: state,
+          child: const NotificationsView(),
+          transitionType: TransitionType.slideFromRight,
         ),
       ),
     ],

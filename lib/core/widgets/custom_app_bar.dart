@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
+import 'package:zet/core/helpers/app_helpers.dart';
 import 'package:zet/core/resources/colors.dart';
 import 'package:zet/core/resources/styles.dart';
 
@@ -29,9 +30,12 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
             color: DynamicColors.sweetGrey(context),
             shape: BoxShape.circle,
           ),
-          child: const Icon(
-            Icons.play_arrow_rounded,
-            color: Colors.black,
+          child: RotatedBox(
+            quarterTurns: context.isLtr ? 2 : 0,
+            child: Icon(
+              Icons.play_arrow_rounded,
+              color: context.textColor,
+            ),
           ),
         ),
       ),

@@ -21,32 +21,35 @@ class SwitchChallenges extends StatelessWidget {
 
         return Padding(
           padding: EdgeInsets.symmetric(horizontal: 25.w),
-          child: Row(
-            spacing: 10.w,
-            children: [
-              Expanded(
-                child: ChallengeFilterButton(
-                  isActive: state.filter == ChallengeFilter.current,
-                  activeColor: AppColors.cyan,
-                  iconAsset: AppSvgs.play,
-                  label: context.tr(LocaleKeys.currentChallenges),
-                  mainAxisAlignment: MainAxisAlignment.spaceAround,
-                  horizontalPadding: 24.w,
-                  onTap: () => cubit.toggleFilter(ChallengeFilter.current),
+          child: IntrinsicHeight(
+            child: Row(
+              crossAxisAlignment: CrossAxisAlignment.stretch,
+              spacing: 10.w,
+              children: [
+                Expanded(
+                  child: ChallengeFilterButton(
+                    isActive: state.filter == ChallengeFilter.current,
+                    activeColor: AppColors.cyan,
+                    iconAsset: AppSvgs.play,
+                    label: context.tr(LocaleKeys.currentChallenges),
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    horizontalPadding: 12.w,
+                    onTap: () => cubit.toggleFilter(ChallengeFilter.current),
+                  ),
                 ),
-              ),
-              Expanded(
-                child: ChallengeFilterButton(
-                  isActive: state.filter == ChallengeFilter.past,
-                  activeColor: AppColors.pink,
-                  iconAsset: AppSvgs.pastChallenges,
-                  label: context.tr(LocaleKeys.previousChallenges),
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  horizontalPadding: 18.w,
-                  onTap: () => cubit.toggleFilter(ChallengeFilter.past),
+                Expanded(
+                  child: ChallengeFilterButton(
+                    isActive: state.filter == ChallengeFilter.past,
+                    activeColor: AppColors.pink,
+                    iconAsset: AppSvgs.pastChallenges,
+                    label: context.tr(LocaleKeys.previousChallenges),
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    horizontalPadding: 12.w,
+                    onTap: () => cubit.toggleFilter(ChallengeFilter.past),
+                  ),
                 ),
-              ),
-            ],
+              ],
+            ),
           ),
         );
       },
